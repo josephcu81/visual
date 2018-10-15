@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>▶  ### VISUAL### [%-5level] %d{HH:mm:ss} [%logger{20}.%method:%line]- %msg%n</pattern>
+		</encoder>
+	</appender>
+    <logger name="org.springframework" additivity="false" >
+		<level value="DEBUG"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+    <root>
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>
