@@ -23,12 +23,14 @@ public class SampleController
   @RequestMapping({"/index"})
   public String index(@RequestParam(required=false) String name, ModelMap map)
   {
-	  logger.debug("로그를 호출한다.!!!!!!!!!!!!!!!!!");
-	  logger.debug("로그를 호출한다.!!!!!!!!!!!!!!!!!");
-	  logger.debug("로그를 호출한다.!!!!!!!!!!!!!!!!!");
-	  logger.debug("로그를 호출한다.!!!!!!!!!!!!!!!!!");
-	  logger.debug("로그를 호출한다.!!!!!!!!!!!!!!!!!");
     map.addAttribute("greed", sampleService.getGreeding(name));
     return "sample/index";
+  }
+  
+  @RequestMapping({"/index2"})
+  public String index2(@RequestParam(required=false) String name, ModelMap map)
+  {
+    map.addAttribute("greed", sampleService.getGreeding(name));
+    return "sample/index2";
   }
 }
