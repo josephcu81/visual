@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 /*전체 공통 */
+/**/
+
+body {min-width : 1024px;}
 
 
 /*header area */
@@ -33,3 +36,9 @@ nav.sidebar {
 .section-chart {}
 .section-chart canvas {border: 1px solid red !important;}
 .section-grid {}
+
+/*grid*/
+.ui-jqgrid
+{
+	font-size:0.8rem
+}

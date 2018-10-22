@@ -1,72 +1,82 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>샘플페이지</title>
+
+    <meta charset="utf-8" />
+    <title>jqGrid Loading Data - Alternate Row Background</title>
+    <!-- The jQuery library is a prerequisite for all jqSuite products -->
+    <script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
+	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
 	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- We support more than 40 localizations -->
+    <script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-kr.js"></script>
+	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
+	
+	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+	<!---	
+	<link rel="stylesheet" href="../../../css/iconic/font/css/open-iconic-bootstrap.css">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+ --->
+    <!-- The link to the CSS that the grid needs -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
+	<script>
+		$.jgrid.defaults.width = 780;
+		$.jgrid.defaults.responsive = true;
+		$.jgrid.defaults.styleUI = 'Bootstrap4';
+		$.jgrid.defaults.iconSet = "Octicons";
+	</script>
+  <script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!-- top 메뉴 영역 -->
-	<div class="content-header-wrap">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">
-				<img src="/images/main/logo.png" alt="농업정책보험금융원" />
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">#홈</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">#메뉴1</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">#메뉴2</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">#비활성 메뉴</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-	<!-- 컨텐츠 영역 -->
-	<div class="content-body-wap">
-		<!-- 좌측 네비게이션 영역 -->
-	<div class="row">
-		<div class="col-3">
-			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-			  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-			  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-			  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-			  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-			</div>
-		</div>
-		<div class="col-9">
-			<div class="tab-content" id="v-pills-tabContent">
-			  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...1</div>
-			  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...2</div>
-			  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...3</div>
-			  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...4</div>
-			</div>
-		</div>
-	</div>
-	</div>
-	
-	<!-- footer 구성 필요 -->
-	<div class="content-footer-wap">
-		하단
-	</div>
+<div style="margin-left:20px;margin-top:20px">
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+	<span class="oi oi-person"  ></span>
+</div>
+    <script type="text/javascript"> 
+    
+        $(document).ready(function () {
+           // altrows are set with table striped class for Boostrap
+           $.jgrid.styleUI.Bootstrap.base.rowTable = "table table-bordered table-striped";
+			
+        	$("#jqGrid").jqGrid({
+        	    url: './data',
+        	    mtype: "GET",
+        		//styleUI : 'Bootstrap',
+        	    datatype: "json",
+        	    colModel: [
+        	        { label: 'OrderID', name: 'OrderID', key: true },
+        	        { label: 'Customer ID', name: 'CustomerID' },
+        	        { label: 'Order Date', name: 'OrderDate' },
+        	        { label: 'Freight', name: 'Freight' },
+        	        { label:'Ship Name', name: 'ShipName' }
+        	    ],
+        	    loadonce: true,
+				altRows : true,
+				rownumbers: true, // show row numbers
+                rownumWidth: 35, // the width of the row numbers columns
+				//multiselect : true,
+                width: 780,
+				//colMenu : true,
+				menubar: true,
+				viewrecords : true,
+				hoverrows : true,
+                height: 200,
+                rowNum: 20,				
+				sortable: true,				
+        	    //pager: "#jqGridPager",
+        	    autowidth:true
+        	});
+			
+        });
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </script>
+
+    
+	
 </body>
 </html>

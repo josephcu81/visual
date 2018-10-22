@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+
+var JsUtil = {
+		
+}
+
+var jqGrid = {
+		
+}

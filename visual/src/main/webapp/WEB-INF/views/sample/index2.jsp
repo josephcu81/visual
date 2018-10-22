@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -6,8 +6,34 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>메인 페이지 > 농업정책보험금융원</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+    <!-- jquery + ui -->
+	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
+	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
+		
+    <!-- jqgried -->
+    <script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-kr.js"></script>
+	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
+	
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
+    
+	<script>
+		$.jgrid.defaults.width = 780;
+		$.jgrid.defaults.responsive = true;
+		$.jgrid.defaults.styleUI = 'Bootstrap4';
+		$.jgrid.defaults.iconSet = "Octicons";
+	</script>
+	
+	<!-- bootstrap 4.1.3 -->
+ 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
+  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	
 	<link rel="stylesheet" href="/css/ui-common.css"/>
+	<script src="/js/sample/index2.js"></script>
+	
 </head>
 <body>
 	<!-- header area -->
@@ -68,21 +94,20 @@
 			<div class="section-chart">
 				<canvas class="my-4 w-100"></canvas>
 			</div>
-			<!-- section-grid -->
+			<!-- section-grid-paging-->
 			<h3>서브 타이틀</h3>
 			<div  class="section-grid">
-				그리드 구성 영역
+				<table class="grid" id="jqGrid"></table>
+    			<div id="jqGridPager"></div>
+			</div>
+			<!-- section-grid-none paging-->
+			<h3>서브 타이틀</h3>
+			<div  class="section-grid">
+				<table class="grid" id="jqGrid2"></table>    			
 			</div>
 		</main>
 		<!-- //Content area -->
 	</div>
 	<!-- //body area -->
-	
-	
-	
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
