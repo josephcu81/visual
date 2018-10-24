@@ -20,8 +20,9 @@ public class WebConfig extends WebMvcConfigurerAdapter
   {
     registry.addResourceHandler(new String[] { "/resources/**" }).addResourceLocations(new String[] { "/resources/" });
     registry.addResourceHandler(new String[] { "/plugins/**" }).addResourceLocations(new String[] { "/plugins/" });
-    registry.addResourceHandler(new String[] { "/images/**" }).addResourceLocations(new String[] { "/images/" });
     registry.addResourceHandler(new String[] { "/css/**" }).addResourceLocations(new String[] { "/css/" });
+    registry.addResourceHandler(new String[] { "/images/**" }).addResourceLocations(new String[] { "/images/" });
+    registry.addResourceHandler(new String[] { "/js/**" }).addResourceLocations(new String[] { "/js/" });
   }
   
   @Override

@@ -9,12 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 @RequestMapping({"/sample"})
 public class SampleController
 {
-  
   private static final Logger logger = LoggerFactory.getLogger(SampleController.class);
   
   @Autowired
@@ -32,5 +33,11 @@ public class SampleController
   {
     map.addAttribute("greed", sampleService.getGreeding(name));
     return "sample/index2";
+  }
+  
+  @RequestMapping({"/data"})
+  @ResponseBody
+  public String data() {
+	  return sampleService.getData();
   }
 }

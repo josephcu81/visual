@@ -2,5 +2,7 @@ package kr.apfs.sample.service;
 
 public abstract interface SampleService
 {
-  public abstract String getGreeding(String paramString);
+  public String getGreeding(String paramString);
+  
+  public String getData();
 }
