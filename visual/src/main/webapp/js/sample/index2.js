@@ -21,7 +21,6 @@ $(document).ready(function() {
 	
 	
 	var pageGridCmpnt = new JqgridCmpnt('#jqPageGrid', '#jqGridPager');
-	
 	pageGridCmpnt.createGrid(option);
 	
 	
@@ -88,8 +87,22 @@ $(document).ready(function() {
 		
 		
 	});*/
-        
+	indexProc.init();
 });
+
+var indexProc = {
+	init : function() {
+		
+	}
+	, initGrid : function() {
+		
+	}
+	, initChart : function() {
+		
+	}
+	, eventBind : function() {
+	}
+}
 
 $(window).resize(function() {	
 	$(".grid").setGridWidth($('main').width());

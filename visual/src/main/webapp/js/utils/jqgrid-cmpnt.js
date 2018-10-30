@@ -54,6 +54,18 @@ JqgridCmpnt.prototype.createGrid = function(recievedOption) {
 	var option = Object.assign(this._option, recievedOption);
 	console.log(option)
 	$(this._gridId).jqGrid(option);
+	
+	$(this._gridId).on("jqGridSelectRow", function(event, id, orgEvent) {
+		console.log(event);
+		console.log(id);
+		console.log(orgEvent);
+		console.log($(this));
+		//var rowData = $(this._gridId).getRowData(id);
+		var rowData = $(this).jqGrid('getRowData',id);
+		console.log(rowData);
+		console.log(rowData.ShipName);
+	});
+	
 }
 // 페이징 포함 그리드 생성
 JqgridCmpnt.prototype.createPagingGrid = function(recievedOption) {
@@ -61,6 +73,11 @@ JqgridCmpnt.prototype.createPagingGrid = function(recievedOption) {
 	console.log(option)
 	$(this._gridId).jqGrid(option);
 }
+
+JqgridCmpnt.prototype.getRowData = function(id) {
+	$(this._gridId).jqGrid('getRowData', id);
+}
+
 
 
 
