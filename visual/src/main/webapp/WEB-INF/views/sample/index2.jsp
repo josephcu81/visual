@@ -32,8 +32,6 @@
   	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
 	
 	<link rel="stylesheet" href="/css/ui-common.css"/>
-	<script src="/js/sample/index2.js"></script>
-	
 </head>
 <body>
 	<!-- header area -->
@@ -95,19 +93,23 @@
 				<canvas class="my-4 w-100"></canvas>
 			</div>
 			<!-- section-grid-paging-->
-			<h3>서브 타이틀</h3>
+			<h3>일반 그리드</h3>
 			<div  class="section-grid">
 				<table class="grid" id="jqGrid"></table>
     			<div id="jqGridPager"></div>
 			</div>
 			<!-- section-grid-none paging-->
-			<h3>서브 타이틀</h3>
+			<h3>페이징 그리드</h3>
 			<div  class="section-grid">
-				<table class="grid" id="jqGrid2"></table>    			
+				<table class="grid" id="jqPageGrid"></table>    			
+    			<div id="jqGridPager"></div>
 			</div>
 		</main>
 		<!-- //Content area -->
 	</div>
 	<!-- //body area -->
+	
+	<script src="/js/utils/jqgrid-cmpnt.js"></script>
+	<script src="/js/sample/index2.js"></script>
 </body>
 </html>

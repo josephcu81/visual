@@ -3,9 +3,30 @@
  */
 
 $(document).ready(function() {
-		
+	// 그리드 기본 옵션
+	var option = {
+			url: './data',
+			colModel: [
+				{ label: 'OrderID', name: 'OrderID', key: true },
+				{ label: 'Customer ID', name: 'CustomerID' },
+				{ label: 'Order Date', name: 'OrderDate' },
+				{ label: 'Freight', name: 'Freight' },
+				{ label:'Ship Name', name: 'ShipName' }
+				],
+				height: 200,
+				rowNum: 30
+	}
+	var girdCmpnt = new JqgridCmpnt('#jqGrid');
+	girdCmpnt.createGrid(option);
+	
+	
+	var pageGridCmpnt = new JqgridCmpnt('#jqPageGrid', '#jqGridPager');
+	
+	pageGridCmpnt.createGrid(option);
+	
+	
 	// Draw Grid
-	$("#jqGrid").jqGrid({
+	/*$("#jqGrid").jqGrid({
 	    url: './data',
 	    mtype: "GET",
 		//styleUI : 'Bootstrap',
@@ -32,10 +53,10 @@ $(document).ready(function() {
 		sortable: true,				
 	    //pager: "#jqGridPager",
 	    autowidth:true
-	});
+	});*/
 	
 	// Draw Grid
-	$("#jqGrid2").jqGrid({
+	/*$("#jqGrid2").jqGrid({
 		url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
 	    //url: './data',
 	    mtype: "GET",
@@ -56,7 +77,7 @@ $(document).ready(function() {
 	    pginput: false,
 	    pgtext: "",
 	    autowidth:true
-	});
+	});*/
 	
 	// event bind
 	/*$("#jqGrid2").on("jqGridSelectRow", function(event, id, orgEvent) {
