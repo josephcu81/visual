@@ -1,87 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>메인 페이지 > 농업정책보험금융원</title>
-	
-    <!-- jquery + ui -->
-	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
-	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
-		
-    <!-- jqgried -->
-    <script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-kr.js"></script>
-	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
-	
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
-    
-	<script>
-		$.jgrid.defaults.width = 780;
-		$.jgrid.defaults.responsive = true;
-		$.jgrid.defaults.styleUI = 'Bootstrap4';
-		$.jgrid.defaults.iconSet = "Octicons";
-	</script>
-	
-	<!-- bootstrap 4.1.3 -->
- 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
-  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-	
-	<link rel="stylesheet" href="/css/ui-common.css"/>
-</head>
-<body>
 	<!-- header area -->
-	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-		<a class="navbar-brand" href="#">
-			<img src="/images/main/logo.png" alt="농업정책보험금융원" />
-		</a>
-		<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button> -->
-		<!-- 	<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">#홈</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">#메뉴1</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">#메뉴2</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">#비활성 메뉴</a>
-				</li>
-			</ul>
-		</div> -->
-	</nav>
+	<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
 	<!-- //header area -->
 	<!-- body area -->
 	<div class="body_area_wrap">
 		<!-- Menu area -->
-		<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-			<div class="sidebar-sticky">
-				<ul class="nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link active" href="#">활성화된 메뉴</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">메뉴2</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">메뉴3</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">비활성된 메뉴</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
 		<!-- //Menu area -->
+		<jsp:include page="/WEB-INF/views/layout/menu.jsp"></jsp:include>
 		<!-- Content area -->
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<!-- title -->
@@ -108,8 +35,6 @@
 		<!-- //Content area -->
 	</div>
 	<!-- //body area -->
-	
-	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 	<script src="/js/sample/index2.js"></script>
-</body>
-</html>
+	
+<jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

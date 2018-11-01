@@ -50,12 +50,12 @@ $(document).ready(function() {
         height: 200,       
         rowNum: 20,				
 		sortable: true,				
-	    //pager: "#jqGridPager",
+	    //pager: "",
 	    autowidth:true
-	});*/
+	});
 	
 	// Draw Grid
-	/*$("#jqGrid2").jqGrid({
+	$("#jqPageGrid").jqGrid({
 		url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
 	    //url: './data',
 	    mtype: "GET",
@@ -71,10 +71,10 @@ $(document).ready(function() {
 		viewrecords: true,
 	    height: 250,	    
 	    pager: true,
-	    rowNum: 1000,
+	    rowNum: 20,
 	    pgbuttons: false,
 	    pginput: false,
-	    pgtext: "",
+	    pgtext: "jqGridPager",
 	    autowidth:true
 	});*/
 	

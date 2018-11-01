@@ -51,7 +51,33 @@ JqgridCmpnt.prototype.getPagerId = function(){
 
 // 일반 그리드 생성
 JqgridCmpnt.prototype.createGrid = function(recievedOption) {
+	if (typeof Object.assign != 'function') {
+	  Object.assign = function(target, varArgs) { // .length of function is 2
+		  'use strict';
+		  if (target == null) { // TypeError if undefined or null
+			  throw new TypeError('Cannot convert undefined or null to object');
+		  }
+	
+		  var to = Object(target);
+	
+		  for (var index = 1; index < arguments.length; index++) {
+			  var nextSource = arguments[index];
+	
+			  if (nextSource != null) { // Skip over if undefined or null
+				  for (var nextKey in nextSource) {
+					  // Avoid bugs when hasOwnProperty is shadowed
+					  if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+						  to[nextKey] = nextSource[nextKey];
+					  }
+				  }
+			  }
+		  }
+		  return to;
+	  }
+	}
 	var option = Object.assign(this._option, recievedOption);
+
+	
 	console.log(option)
 	$(this._gridId).jqGrid(option);
 	
@@ -69,6 +95,30 @@ JqgridCmpnt.prototype.createGrid = function(recievedOption) {
 }
 // 페이징 포함 그리드 생성
 JqgridCmpnt.prototype.createPagingGrid = function(recievedOption) {
+	if (typeof Object.assign != 'function') {
+		  Object.assign = function(target, varArgs) { // .length of function is 2
+			  'use strict';
+			  if (target == null) { // TypeError if undefined or null
+				  throw new TypeError('Cannot convert undefined or null to object');
+			  }
+		
+			  var to = Object(target);
+		
+			  for (var index = 1; index < arguments.length; index++) {
+				  var nextSource = arguments[index];
+		
+				  if (nextSource != null) { // Skip over if undefined or null
+					  for (var nextKey in nextSource) {
+						  // Avoid bugs when hasOwnProperty is shadowed
+						  if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+							  to[nextKey] = nextSource[nextKey];
+						  }
+					  }
+				  }
+			  }
+			  return to;
+		  }
+		}
 	var option = Object.assign(this._option, recievedOption);
 	console.log(option)
 	$(this._gridId).jqGrid(option);
