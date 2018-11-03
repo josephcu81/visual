@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<nav class="col-md-2 d-none d-md-block bg-light sidebar">
-		<div class="sidebar-sticky">
+		<div class="sidebar-sticky lnb-area">
 			<ul class="nav flex-column">
 				<li class="nav-item">
 					<a class="nav-link active" href="#">현황</a>

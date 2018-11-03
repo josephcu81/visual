@@ -46,7 +46,8 @@ $(document).ready(function() {
 				],
 				height: 200,
 				rowNum: 30,
-				autowidth:false
+				shrinkToFit : false,
+				autowidth:true
 	}
 	var girdCmpnt = new JqgridCmpnt('#jqGrid');
 	girdCmpnt.createGrid(option);

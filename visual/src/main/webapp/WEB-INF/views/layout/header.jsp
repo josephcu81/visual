@@ -36,12 +36,12 @@
 </head>
 <body>
 	<!-- Header -->
-	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-2 shadow">
 		<div class="navbar-wrapper">
-			<!-- <a class="" href="#">
+			<a class="" href="#">
 				<img src="/images/main/logo.png" alt="농업정책보험금융원" />
-			</a> -->
-			<a class="navbar-brand ml-3 mb-0 h1" href="#">
+			</a>
+			<a class="navbar-brand ml-5 mb-0 h1" href="#">
 				농작물재해보험 통계정보
 			</a>
 		</div>		
