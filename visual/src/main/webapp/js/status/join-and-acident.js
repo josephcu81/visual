@@ -5,7 +5,7 @@
 $(document).ready(function() {
 	// 그리드 기본 옵션
 	var option = {
-			url: './list',
+			url: '/status/join-and-acident/list',
 			colNames: [
 			'구분', '대상면적', '가입농가수', '건수', '과수원(농지)수', '금액', '면적', '면적가입률', '보험료', '국가', '시도', '시군구', '농가', '환급금', '국가', '시도', '시군구', '농가', '환급금차감후보혐료', '농가', '위험보험료', '영업보험료', '보험요율', '환급건수', '환급율', '건당보험료(천원)', '사고현황 지급건수', '보험금', '건당보험금', '사고율', '손해율'
 			],
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 
 				],
-				height: 200,
+				height: 400,
 				rowNum: 30,
 				shrinkToFit : false,
 				autowidth:true

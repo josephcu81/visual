@@ -23,6 +23,8 @@ public class WebConfig extends WebMvcConfigurerAdapter
     registry.addResourceHandler(new String[] { "/css/**" }).addResourceLocations(new String[] { "/css/" });
     registry.addResourceHandler(new String[] { "/images/**" }).addResourceLocations(new String[] { "/images/" });
     registry.addResourceHandler(new String[] { "/js/**" }).addResourceLocations(new String[] { "/js/" });
+    registry.addResourceHandler(new String[] { "/appstack-1-0-1/**" }).addResourceLocations(new String[] { "/appstack-1-0-1/" });
+    
   }
   
   @Override

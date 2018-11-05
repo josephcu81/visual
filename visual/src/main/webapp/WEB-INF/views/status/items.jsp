@@ -12,39 +12,6 @@
   <title>메인 페이지 > 농업정책보험금융원</title>
   
 	<link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
-	<script src="/appstack-1-0-1/dist/js/app.js"></script>
-
-  <!-- Optional JS modules -->
-  <script src="/appstack-1-0-1/dist/js/charts.js"></script>
-  <script src="/appstack-1-0-1/dist/js/forms.js"></script>
-  <script src="/appstack-1-0-1/dist/js/maps.js"></script>
-  <script src="/appstack-1-0-1/dist/js/tables.js"></script>
-  
-  <!-- jquery + ui -->
-	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
-	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
-		
-	<!-- jqgried -->
-	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-en.js"></script>
-	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
-	
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
-    
-	<script>
-		$.jgrid.defaults.width = 780;
-		$.jgrid.defaults.responsive = true;
-		$.jgrid.defaults.styleUI = 'Bootstrap4';
-		$.jgrid.defaults.iconSet = "Octicons";
-	</script>
-	
-	<!-- bootstrap 4.1.3 -->
- 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
-  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-	
-	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 	
 </head>
 <body>
@@ -59,18 +26,18 @@
 					<ul class="sidebar-nav">
 						<li class="sidebar-header">
 						</li>
-						<li class="sidebar-item active">
+						<li class="sidebar-item">
 							<a href="/" class="sidebar-link">
 								 <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 							</a>
 						</li>
-						<li  class="sidebar-item">
+						<li  class="sidebar-item active">
 							<a href="#status" data-toggle="collapse" class="sidebar-link collapsed">
                 				<i class="align-middle" data-feather="layout"></i><span class="align-middle">현황</span>
               				</a>
               				<ul id="status" class="sidebar-dropdown list-unstyled collapse ">
               					<li class="sidebar-item"><a class="sidebar-link" href="/status/cityes/index">시도별 가입 및 사고 현황</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/status/items/index">품목별 가입 및 사고현황</a></li>
+              					<li class="sidebar-item active"><a class="sidebar-link" href="/status/items/index">품목별 가입 및 사고현황</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/status/join/index">시도별 가입자 현황</a></li>
               				</ul>
 						</li>
@@ -105,16 +72,14 @@
 				<!-- Content -->
 				<main class="content">
 					<div class="container-fluid p-0">
-						<h1 class="h3 mb-3">제목</h1>	
+						<h1 class="h3 mb-3">품목별 가입 및 사고현황</h1>	
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<h5 class="card-title">일반 그리드</h5>										
+										<h5 class="card-title">가입 및 사고현황 목록</h5>										
 									</div>
-								</div>
 								<!-- 내용 -->
-								<div class="section-grid">
 									<table class="grid" id="jqGrid"></table>
 					    			<div id="jqGridPager"></div>
 								</div>
@@ -125,7 +90,40 @@
 			</div>
 		</div>
 	</div>
+	<script src="/appstack-1-0-1/dist/js/app.js"></script>
 
-  <script src="/js/status/join-and-acident.js"></script>
+	 <!-- Optional JS modules -->
+	 <script src="/appstack-1-0-1/dist/js/charts.js"></script>
+	 <script src="/appstack-1-0-1/dist/js/forms.js"></script>
+	 <script src="/appstack-1-0-1/dist/js/maps.js"></script>
+	 <script src="/appstack-1-0-1/dist/js/tables.js"></script>
+	 
+	 <!-- jquery + ui -->
+	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
+	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
+		
+	<!-- jqgried -->
+	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-en.js"></script>
+	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
+	
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+	   <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
+	   
+	<script>
+		$.jgrid.defaults.width = 780;
+		$.jgrid.defaults.responsive = true;
+		$.jgrid.defaults.styleUI = 'Bootstrap4';
+		$.jgrid.defaults.iconSet = "Octicons";
+	</script>
+	
+	<!-- bootstrap 4.1.3 -->
+	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
+ 	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	
+	<script src="/js/utils/jqgrid-cmpnt.js"></script>
+
+  	<script src="/js/status/join.js"></script>
 </body>
 </html>
