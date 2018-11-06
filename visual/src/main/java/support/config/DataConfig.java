@@ -44,9 +44,9 @@ public class DataConfig{
 		
 		sqlSession.setDataSource(datasource);
 		sqlSession.setConfigLocation(pmrpr.getResource("classpath:/sqlmap/mapper-config.xml"));
-		//sqlSession.setMapperLocations(pmrpr.getResources("classpath:/sqlmap/mapper/*.xml"));
+		sqlSession.setMapperLocations(pmrpr.getResources("classpath:/sqlmap/mapper/*.xml"));
 		sqlSession.setMapperLocations(pmrpr.getResources("classpath:/sqlmap/mapper/**/*.xml"));
-		//sqlSession.setMapperLocations(pmrpr.getResources("classpath:/sqlmap/mapper/**/**/*.xml"));
+		sqlSession.setMapperLocations(pmrpr.getResources("classpath:/sqlmap/mapper/**/**/*.xml"));
 		return sqlSession;
 	}
     

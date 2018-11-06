@@ -13,6 +13,6 @@ public interface JoinMapper {
 	 * @param condition
 	 * @return
 	 */
-	List<JoinStatusVo> selectJoinStatusList(Map<String, Object> condition);
+	public List<JoinStatusVo> selectJoinStatusList(Map<String, Object> condition);
 
 }

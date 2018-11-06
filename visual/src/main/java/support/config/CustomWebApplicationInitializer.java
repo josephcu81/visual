@@ -24,7 +24,7 @@ public class CustomWebApplicationInitializer implements WebApplicationInitialize
 	private void registerDispatcherServlet(ServletContext servletContext) {
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 
-		rootContext.register(new Class[] {AppConfig.class});
+		rootContext.register(new Class[] {AppConfig.class, DataConfig.class});
 
 		servletContext.addListener(new ContextLoaderListener(rootContext));
 
