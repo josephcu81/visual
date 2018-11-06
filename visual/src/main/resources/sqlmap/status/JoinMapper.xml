@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.apfs.status.mapper.JoinMapper">
+	<select id="selectJoinStatusList" resultType="kr.apfs.status.vo.JoinStatusVo">
+		SELECT
+			cntrct_yy as "cntrctYy",
+			sidocd,
+			insrcl,
+			sidonm,
+			mcnt,
+			wcnt,
+			mwall,
+			ag30,
+			ag40,
+			ag50,
+			ag60,
+			ag70,
+			agall,
+			gicnt,
+			bicnt,
+			gball,
+			ar2m,
+			ar24,
+			ar46,
+			ar68,
+			ar810,
+			ar1015,
+			ar15e,
+			arall,
+			crtid,
+			to_char(crtdt, 'YYYY-MM-DD') as crtdt
+		FROM status3
+		WHERE 1=1
+	</select>
+</mapper>
