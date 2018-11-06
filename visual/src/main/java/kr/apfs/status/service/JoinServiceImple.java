@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.apfs.status.mapper.JoinMapper;
 import kr.apfs.status.vo.JoinStatusVo;
 
 @Service
 public class JoinServiceImple implements JoinService {
-
+	@Autowired
+	private JoinMapper joinMapper;
 	@Override
 	public List<JoinStatusVo> getJoinStatusList(Map<String, Object> condition) {
-		
+		List<JoinStatusVo> list = joinMapper.selectJoinStatusList(condition);
 		return getTestData();
 	}
 	

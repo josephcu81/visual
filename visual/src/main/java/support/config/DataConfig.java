@@ -15,8 +15,10 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 
+import egovframework.rte.psl.dataaccess.mapper.Mapper;
+
 @Configuration
-@MapperScan(basePackages={ "kr.apfs.**.mapper" }, sqlSessionTemplateRef="sqlSessionSimple")
+@MapperScan(annotationClass = Mapper.class, basePackages={ "kr.apfs" }, sqlSessionTemplateRef="sqlSessionSimple")
 public class DataConfig{
 	
 	private final String jndiname = "jdbc/orcl";
