@@ -19,26 +19,26 @@ var dash = {
 		new Chart(document.getElementById("chartjs-dashboard-line"), {
 			type: 'line',
 			data: {
-				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
 				datasets: [{
-					label: "Sales ($)",
+					label: "2018년 (%)",
 					fill: true,
 					backgroundColor: "transparent",
 					borderColor: "#0cc2aa",
-					data: [2015, 1465, 1487, 1796, 1387, 2123, 2866, 2548, 3902, 4938, 3917, 4927]
+					data: [0.0, 0.3, 4.0, 10.9, 17.4, 26.3, 29.1, 29.6, 29.7, 30.0, , ]
 				}, {
-					label: "Orders",
+					label: "2017년(%)",
 					fill: true,
 					backgroundColor: "transparent",
 					borderColor: "#5fc27e",
 					borderDash: [4, 4],
-					data: [928, 734, 626, 893, 921, 1202, 1396, 1232, 1524, 2102, 1506, 1887]
+					data:  [0.0, 0.2, 2.1, 4.9, 15.9, 27.7, 28.5, 28.7, 28.7, 28.8, 29.9, 30.1 ]
 				}]
 			},
 			options: {
 				maintainAspectRatio: false,
 				legend: {
-					display: false
+					display: false	
 				},
 				tooltips: {
 					intersect: false
@@ -60,7 +60,7 @@ var dash = {
 					}],
 					yAxes: [{
 						ticks: {
-							stepSize: 500
+							stepSize: 5.0
 						},
 						display: true,
 						borderDash: [5, 5],
@@ -74,7 +74,7 @@ var dash = {
 			});
 	}
 	/**
-	 * 백터 맵 초기화
+	 * 백터 맵 초기화  "fill": "#007bff", '#DCE3E8'
 	 */
 	,drawVectorMap : function() {
 		$('#korea_map').vectorMap({
@@ -104,17 +104,17 @@ var dash = {
 				}
 			},
 			markers: [{
-				latLng: [37.77, -122.41],
-				name: 'San Francisco: 375'
+				latLng: [37.56, 126.97],
+				name: '서울: 12%'
 			}, {
-				latLng: [40.71, -74.00],
-				name: 'New York: 350'
+				latLng: [36.49, 128.88],
+				name: '경북: 35%'
 			}, {
-				latLng: [39.09, -94.57],
-				name: 'Kansas City: 250'
+				latLng: [37.43, 126.98],
+				name: '과천시: 25%'
 			}, {
-				latLng: [36.16, -115.13],
-				name: 'Las Vegas: 275'
+				latLng: [35.16, 126.85],
+				name: '광주: 10%'
 			}, {
 				latLng: [32.77, -96.79],
 				name: 'Dallas: 225'
@@ -145,7 +145,7 @@ var dash = {
 		new Chart(document.getElementById("chartjs-dashboard-bar"), {
 			type: 'bar',
 			data: {
-				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				labels: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
 				datasets: [{
 					label: "작년",
 					backgroundColor: "#0cc2aa",

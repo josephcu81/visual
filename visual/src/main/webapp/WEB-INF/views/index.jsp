@@ -113,8 +113,8 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h4>2,562 건</h4> <!-- 카운트  -->
-												<p class="mb-0">가입농가수</p> <!-- 타이틀 -->
+												<h4>242,578건</h4> <!-- 카운트  -->
+												<p class="mb-0">가입률</p> <!-- 타이틀 -->
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
 												<div data-label="50%" class="doughnut mt-2 doughnut-primary doughnut-50"></div>
@@ -129,7 +129,7 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h4>2,507,852 원</h4>
+												<h4>33백만원</h4>
 												<p class="mb-0">환급률</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
@@ -144,11 +144,11 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h4>20 건</h4>
+												<h6>24,429건/242,578건</h6>
 												<p class="mb-0">사고율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
-												<div data-label="20%" class="doughnut mt-2 doughnut-success doughnut-20"></div>
+												<div data-label="10%" class="doughnut mt-2 doughnut-success doughnut-20"></div>
 											</div>
 										</div>
 									</div>
@@ -159,7 +159,7 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h4>25,452</h4>
+												<h6>위험보험료:328,005백만원</h6>
 												<p class="mb-0">손해율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
@@ -190,7 +190,7 @@
 							<div class="col-12 col-lg-8 d-flex">
 								<div class="card flex-fill w-100">
 									<div class="card-header">
-										<h5 class="card-title mb-0">월별 증감율</h5>
+										<h5 class="card-title mb-0">농작물재보험 월별 가입률추이(2017년:2018년)</h5>
 									</div>
 									<div class="card-body">
 										<div class="chart">
@@ -203,7 +203,7 @@
 							<div class="col-12 col-lg-4 d-flex">
 								<div class="card flex-fill w-100">
 									<div class="card-header">
-										<h5 class="card-title mb-0">지역별 사고현황</h5>
+										<h5 class="card-title mb-0">지역별 가입률(면적)</h5>
 									</div>
 									<div class="card-body px-4">
 										<div id="korea_map" style="height:294px;"></div>
