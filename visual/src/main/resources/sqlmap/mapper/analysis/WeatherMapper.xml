@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.apfs.analysis.mapper.WeatherMapper">
+	<select id="insertWeatherInfo" parameterType="java.util.Map">
+		INSERT INTO kmaday (
+			ymd
+			,areaid
+			,areaname
+			,cropspeid
+			,cronam
+			,cropspename
+			,dayavgta
+			,daymaxta
+			,dayminta
+			,dayavgrhm
+			,dayminrhm
+			,daysumrn
+			,dayavgws
+			,daysumss
+			,wrncount
+			,wrncd
+			,wrnnm
+			,crtid
+			,crtdt					
+		) VALUES (
+			#{ymd}
+			,#{areaid}
+			,#{areaname}
+			,#{cropspeid}
+			,#{cronam}
+			,#{cropspename}
+			,#{dayavgta}
+			,#{daymaxta}
+			,#{dayminta}
+			,#{dayavgrhm}
+			,#{dayminrhm}
+			,#{daysumrn}
+			,#{dayavgws}
+			,#{daysumss}
+			,#{wrncount}
+			,#{wrncd}
+			,#{wrnnm}
+			,#{crtid}
+			,SYSDATE
+		)
+	</select>
+</mapper>

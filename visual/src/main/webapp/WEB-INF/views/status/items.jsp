@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>메인 페이지 > 농업정책보험금융원</title>
+  <title>품목별 가입 및 사고현황 > 농업정책보험금융원</title>
   
 	<link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
 	
