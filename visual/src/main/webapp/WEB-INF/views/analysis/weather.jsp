@@ -85,14 +85,14 @@
 												<label class="form-label mr-3" for="areaid">주산지</label>
 												<select class="custom-select mr-3" id="areaid" name="areaid">
 										          <option value="999999999" selected>전체</option>
-										          <option value="2600000088">부산</option>
-										          <option value="2600000088">대구</option>
-										          <option value="2600000088">강화</option>
+										          <c:forEach items="${areaList }" var="area">
+										          	<option value="${area.CODE }">${area.NAME }</option>
+										          </c:forEach>
 										        </select>
 											</div>
 											<div class="ml-4">	
 												<button type="button" class="btn btn-primary ml-2" id="btn-search">조회</button>
-												<button type="button" class="btn btn-primary ml-2" id="btn-save">저장</button>
+												<!-- <button type="button" class="btn btn-primary ml-2" id="btn-save">저장</button> 서버에서 저장 처리할 예쩡-->
 											</div>
 										</form>
 									</div>
