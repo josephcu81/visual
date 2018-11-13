@@ -14,4 +14,6 @@ public interface CommonService {
 	 * @return List<Map<String, Object>> key/value 목록
 	 */
 	public List<Map<String, Object>> getSidoCodeList();
+
+	public List<Map<String, Object>> getAreaIdList();
 }

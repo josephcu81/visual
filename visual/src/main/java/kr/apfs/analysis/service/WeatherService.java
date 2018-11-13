@@ -1,6 +1,7 @@
 package kr.apfs.analysis.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.apfs.analysis.vo.WeatherVo;
 import support.util.ResultVo;
@@ -13,5 +14,7 @@ public interface WeatherService {
 	 * @return
 	 */
 	public ResultVo save(List<WeatherVo> weatherList);
+
+	public String saveAndGetData(Map<String, Object> condition);
 
 }

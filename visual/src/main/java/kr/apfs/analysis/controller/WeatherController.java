@@ -18,7 +18,7 @@ import kr.apfs.analysis.vo.WeatherVo;
 import kr.apfs.common.service.CommonService;
 import support.util.ResultVo;
 
-@RequestMapping("/analisys/weather")
+@RequestMapping("/analysis/weather")
 @Controller
 public class WeatherController {
 	
@@ -38,10 +38,10 @@ public class WeatherController {
 	public String joinAndAcident ( ModelMap model ) {
 		// 년도 목록 생성
 		
-		// 시도 코드 목록 생성
-		model.addAttribute("sidoList", commonService.getSidoCodeList());
+		// 주산지 목록 조회
+		//model.addAttribute("sidoList", commonService.getAreaIdList());
 		
-		return "/analisys/weather/index";
+		return "/analysis/weather";
 	}
 	
 	/**
@@ -59,5 +59,11 @@ public class WeatherController {
 		List<WeatherVo> weatherList = new ArrayList<WeatherVo>();
 		result = weatherService.save(weatherList);
 		return new Gson().toJson(result);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/getData")
+	public String getData(@RequestParam Map<String, Object> condition, ModelMap model) {
+		return weatherService.saveAndGetData(condition);
 	}
 }

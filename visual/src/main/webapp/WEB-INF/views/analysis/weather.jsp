@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?serviceKey=t%2FW%2BgR8MjLNnoqLoxLWpIrx%2BT9%2F%2FKBemixdk8wZxqBmz53x1ykp1dYhyotCSk4xj6Os3Ri7YZVKSAeEljAfksg%3D%3D" />
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -11,8 +12,7 @@
 
   <title>주산지지역의날씨정보 > 농업정책보험금융원</title>
   
-	<link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
-	
+  <link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wraaper">
@@ -76,33 +76,24 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
-									<div class="card-header">
-										<h5 class="card-title">검색조건</h5>										
-									</div>
 									<div class="card-body">
 										<form class="form-inline">
-											<!-- <label class="sr-only" for="inlineFormInputName2">통계조회일자</label>
-											<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe"> -->
 											<div class="form-group">
-												<label class="form-label">통계조회일자</label>
-												<input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+												<label class="form-label mr-3"  for="daterange">통계조회일자</label>
+												<input class="form-control mr-5" type="text" id="daterange" name="daterange" style="width: 213px;" />
+												
+												<label class="form-label mr-3" for="areaid">주산지</label>
+												<select class="custom-select mr-3" id="areaid" name="areaid">
+										          <option value="999999999" selected>전체</option>
+										          <option value="2600000088">부산</option>
+										          <option value="2600000088">대구</option>
+										          <option value="2600000088">강화</option>
+										        </select>
 											</div>
-
-											<label class="sr-only" for="inlineFormInputGroupUsername2">주산지</label>
-											<div class="input-group mb-2 mr-sm-2">
-												<div class="input-group-prepend">
-													<div class="input-group-text">@</div>
-												</div>
-												<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+											<div class="ml-4">	
+												<button type="button" class="btn btn-primary ml-2" id="btn-search">조회</button>
+												<button type="button" class="btn btn-primary ml-2" id="btn-save">저장</button>
 											</div>
-
-											<div class="custom-control custom-checkbox mb-1 mr-sm-2">
-												<input type="checkbox" class="custom-control-input" id="customControlInline">
-												<label class="custom-control-label" for="customControlInline">Remember me</label>
-											</div>
-
-											<button type="button" class="btn btn-primary mb-2">조회</button>
-											<button type="button" class="btn btn-primary mb-2">저장</button>
 										</form>
 									</div>
 								</div>
@@ -128,12 +119,13 @@
 
 	 <!-- Optional JS modules -->
 	 <script src="/appstack-1-0-1/dist/js/charts.js"></script>
+	 
+	 <!-- <script src="/appstack-1-0-1/dist/js/maps.js"></script> -->
 	 <script src="/appstack-1-0-1/dist/js/forms.js"></script>
-	 <script src="/appstack-1-0-1/dist/js/maps.js"></script>
 	 <script src="/appstack-1-0-1/dist/js/tables.js"></script>
 	 
 	 <!-- jquery + ui -->
-	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
+	<!-- <script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script> forms.js와 충돌로 제외 처리 -->
 	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
 		
 	<!-- jqgried -->
@@ -156,9 +148,10 @@
 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
 	
+  	
+	
 	<!-- grid utils -->
 	<script src="/js/utils/jqgrid-cmpnt.js"></script>
-	
 	<!-- -->
   	<script src="/js/analysis/weather.js"></script>
   	

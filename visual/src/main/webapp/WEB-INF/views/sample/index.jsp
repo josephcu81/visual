@@ -49,7 +49,7 @@
         		//styleUI : 'Bootstrap',
         	    datatype: "json",
         	    colModel: [
-        	        { label: 'OrderID', name: 'OrderID', key: true },
+        	        { label: 'OrderID', name: 'Order', key: true },
         	        { label: 'Customer ID', name: 'CustomerID' },
         	        { label: 'Order Date', name: 'OrderDate' },
         	        { label: 'Freight', name: 'Freight' },
