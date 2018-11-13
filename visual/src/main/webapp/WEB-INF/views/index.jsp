@@ -216,7 +216,7 @@
 								<!-- 파이 차트 -->
 								<div class="card flex-fill w-100">
 									<div class="card-header">
-										<h5 class="card-title mb-0">나이별 가입현황</h5>
+										<h5 class="card-title mb-0">연령대별 가입현황(명)</h5>
 									</div>
 									<div class="card-body d-flex">
 										<div class="align-self-center w-100">
@@ -229,20 +229,24 @@
 											<table class="table mb-0">
 												<tbody>
 													<tr>
-														<td><i class="fas fa-square-full text-primary"></i>30대이하</td>
-														<td class="text-right">180,899</td>
+														<td><i class="fas fa-square-full" style="font-size:12px;color:#a180da;"  ></i>30대이하</td>
+														<td class="text-right" >3,051명</td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-square-full text-warning"></i> 40대</td>
-														<td class="text-right">242,578</td>
+														<td><i class="fas fa-square-full" style="font-size:12px;color:#fcc100;"></i> 40대</td>
+														<td class="text-right" >12,150명</td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-square-full text-danger"></i> 50대</td>
-														<td class="text-right">1204,724</td>
+														<td><i class="fas fa-square-full " style="font-size:12px;color:#f44455;"></i> 50대</td>
+														<td class="text-right" >37,692명</td>
 													</tr>
 													<tr>
-														<td><i class="fas fa-square-full" style="background:#E8EAED;"></i> 60대 이상</td>
-														<td class="text-right">709,149</td>
+														<td><i class="fas fa-square-full text-success" ></i> 60대 </td>
+														<td class="text-right">59,580명</td>
+													</tr>
+													<tr>
+														<td><i class="fas fa-square-full text-info" ></i> 70대 이상</td>
+														<td class="text-right">57,933명</td>
 													</tr>
 												</tbody>
 											</table>

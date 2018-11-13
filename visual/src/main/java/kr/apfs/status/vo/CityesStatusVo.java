@@ -1,54 +1,68 @@
 package kr.apfs.status.vo;
 
 public class CityesStatusVo {
-	private String sido; //  - 구분;
-	private long tgar; //  - 대상면적;
-	private long sbfm; //  - 가입농가수;
+	private String cntty; //  - 구분;
+	private String sidocd; //  - 구분;
+	private String sidonm; //  - 구분;
+	private long tagar; //  - 대상면적;
+	private long sbfmcnt; //  - 가입농가수;
 	private long pcycnt; //  - 건수;
 	private long objcnt; //  - 과수원(농지)수;
-	private long sttInsrf; //  - 금액;
-	private long sbsrar; //  - 면적;
-	private float arsbrt; //  - 면적가입률;
-	private long insrf; //  - 보험료;
-	private long govf; // 보험료 - 국가;
-	private long sidof; // 보험료 - 시도;
-	private long sggf; // 보험료 - 시군구;
-	private long fmf; // 보험료 - 농가;
-	private long rta; //  - 환급금;
-	private long gova; // 환급금 - 국가;
-	private long sidoa; // 환급금 - 시도;
-	private long sgga; // 환급금 - 시군구;
-	private long fma; // 환급금 - 농가;
-	private long rta1; //  - 환급금차감후 보혐료;
-	private long fma1; // 환급금차감후 보혐료 - 농가;
-	private long riskInsrf; //  - 위험 보험료;
-	private long bsnInsrf; //  - 영업 보험료;
-	private float insrt; //  - 보험요율;
-	private long rtcnt; //  - 환급건수;
-	private float rtrt; //  - 환급율;
-	private long ginsrf; //  - 건당보험료(천원);
+	private long sbam; //  - 금액;
+	private long sbar; //  - 면적;
+	private float asbbrt; //  - 면적가입률;
+	private long prms; //  - 보험료;
+	private long govprm; // 보험료 - 국가;
+	private long sidoprm; // 보험료 - 시도;
+	private long sggprm; // 보험료 - 시군구;
+	private long fmprm; // 보험료 - 농가;
+	private long rfas; //  - 환급금;
+	private long govrfa; // 환급금 - 국가;
+	private long sidorfa; // 환급금 - 시도;
+	private long sggrfa; // 환급금 - 시군구;
+	private long cnbnrfa; // 환급금 - 농가;
+	private long rfprm; //  - 환급금차감후 보혐료;
+	private long rffmcnt; // 환급금차감후 보혐료 - 농가;
+	private long riskprm; //  - 위험 보험료;
+	private long grsprm; //  - 영업 보험료;
+	private float prmrt; //  - 보험요율;
+	private long rfcnt; //  - 환급건수;
+	private float rfrt; //  - 환급율;
+	private long prmpp; //  - 건당보험료(천원);
 	private long acdcnt; //  - 사고현황 지급건수;
-	private long insra; //  - 보험금;
-	private long ginsra; //  - 건당보험금;
+	private long idm; //  - 보험금;
+	private long idmpa; //  - 건당보험금;
 	private float acdrt; //  - 사고율;
-	private float shrt; //  - 손해율;
-	public String getSido() {
-		return sido;
+	private float losrt; //  - 손해율;
+	public String getCntty() {
+		return cntty;
 	}
-	public void setSido(String sido) {
-		this.sido = sido;
+	public void setCntty(String cntty) {
+		this.cntty = cntty;
 	}
-	public long getTgar() {
-		return tgar;
+	public String getSidocd() {
+		return sidocd;
 	}
-	public void setTgar(long tgar) {
-		this.tgar = tgar;
+	public void setSidocd(String sidocd) {
+		this.sidocd = sidocd;
 	}
-	public long getSbfm() {
-		return sbfm;
+	public String getSidonm() {
+		return sidonm;
 	}
-	public void setSbfm(long sbfm) {
-		this.sbfm = sbfm;
+	public void setSidonm(String sidonm) {
+		this.sidonm = sidonm;
+	}
+	public long getTagar() {
+		return tagar;
+	}
+	public void setTagar(long tagar) {
+		this.tagar = tagar;
+	}
+	public long getSbfmcnt() {
+		return sbfmcnt;
+	}
+	public void setSbfmcnt(long sbfmcnt) {
+		this.sbfmcnt = sbfmcnt;
 	}
 	public long getPcycnt() {
 		return pcycnt;
@@ -62,131 +76,131 @@ public class CityesStatusVo {
 	public void setObjcnt(long objcnt) {
 		this.objcnt = objcnt;
 	}
-	public long getSttInsrf() {
-		return sttInsrf;
+	public long getSbam() {
+		return sbam;
 	}
-	public void setSttInsrf(long sttInsrf) {
-		this.sttInsrf = sttInsrf;
+	public void setSbam(long sbam) {
+		this.sbam = sbam;
 	}
-	public long getSbsrar() {
-		return sbsrar;
+	public long getSbar() {
+		return sbar;
 	}
-	public void setSbsrar(long sbsrar) {
-		this.sbsrar = sbsrar;
+	public void setSbar(long sbar) {
+		this.sbar = sbar;
 	}
-	public float getArsbrt() {
-		return arsbrt;
+	public float getAsbbrt() {
+		return asbbrt;
 	}
-	public void setArsbrt(float arsbrt) {
-		this.arsbrt = arsbrt;
+	public void setAsbbrt(float asbbrt) {
+		this.asbbrt = asbbrt;
 	}
-	public long getInsrf() {
-		return insrf;
+	public long getPrms() {
+		return prms;
 	}
-	public void setInsrf(long insrf) {
-		this.insrf = insrf;
+	public void setPrms(long prms) {
+		this.prms = prms;
 	}
-	public long getGovf() {
-		return govf;
+	public long getGovprm() {
+		return govprm;
 	}
-	public void setGovf(long govf) {
-		this.govf = govf;
+	public void setGovprm(long govprm) {
+		this.govprm = govprm;
 	}
-	public long getSidof() {
-		return sidof;
+	public long getSidoprm() {
+		return sidoprm;
 	}
-	public void setSidof(long sidof) {
-		this.sidof = sidof;
+	public void setSidoprm(long sidoprm) {
+		this.sidoprm = sidoprm;
 	}
-	public long getSggf() {
-		return sggf;
+	public long getSggprm() {
+		return sggprm;
 	}
-	public void setSggf(long sggf) {
-		this.sggf = sggf;
+	public void setSggprm(long sggprm) {
+		this.sggprm = sggprm;
 	}
-	public long getFmf() {
-		return fmf;
+	public long getFmprm() {
+		return fmprm;
 	}
-	public void setFmf(long fmf) {
-		this.fmf = fmf;
+	public void setFmprm(long fmprm) {
+		this.fmprm = fmprm;
 	}
-	public long getRta() {
-		return rta;
+	public long getRfas() {
+		return rfas;
 	}
-	public void setRta(long rta) {
-		this.rta = rta;
+	public void setRfas(long rfas) {
+		this.rfas = rfas;
 	}
-	public long getGova() {
-		return gova;
+	public long getGovrfa() {
+		return govrfa;
 	}
-	public void setGova(long gova) {
-		this.gova = gova;
+	public void setGovrfa(long govrfa) {
+		this.govrfa = govrfa;
 	}
-	public long getSidoa() {
-		return sidoa;
+	public long getSidorfa() {
+		return sidorfa;
 	}
-	public void setSidoa(long sidoa) {
-		this.sidoa = sidoa;
+	public void setSidorfa(long sidorfa) {
+		this.sidorfa = sidorfa;
 	}
-	public long getSgga() {
-		return sgga;
+	public long getSggrfa() {
+		return sggrfa;
 	}
-	public void setSgga(long sgga) {
-		this.sgga = sgga;
+	public void setSggrfa(long sggrfa) {
+		this.sggrfa = sggrfa;
 	}
-	public long getFma() {
-		return fma;
+	public long getCnbnrfa() {
+		return cnbnrfa;
 	}
-	public void setFma(long fma) {
-		this.fma = fma;
+	public void setCnbnrfa(long cnbnrfa) {
+		this.cnbnrfa = cnbnrfa;
 	}
-	public long getRta1() {
-		return rta1;
+	public long getRfprm() {
+		return rfprm;
 	}
-	public void setRta1(long rta1) {
-		this.rta1 = rta1;
+	public void setRfprm(long rfprm) {
+		this.rfprm = rfprm;
 	}
-	public long getFma1() {
-		return fma1;
+	public long getRffmcnt() {
+		return rffmcnt;
 	}
-	public void setFma1(long fma1) {
-		this.fma1 = fma1;
+	public void setRffmcnt(long rffmcnt) {
+		this.rffmcnt = rffmcnt;
 	}
-	public long getRiskInsrf() {
-		return riskInsrf;
+	public long getRiskprm() {
+		return riskprm;
 	}
-	public void setRiskInsrf(long riskInsrf) {
-		this.riskInsrf = riskInsrf;
+	public void setRiskprm(long riskprm) {
+		this.riskprm = riskprm;
 	}
-	public long getBsnInsrf() {
-		return bsnInsrf;
+	public long getGrsprm() {
+		return grsprm;
 	}
-	public void setBsnInsrf(long bsnInsrf) {
-		this.bsnInsrf = bsnInsrf;
+	public void setGrsprm(long grsprm) {
+		this.grsprm = grsprm;
 	}
-	public float getInsrt() {
-		return insrt;
+	public float getPrmrt() {
+		return prmrt;
 	}
-	public void setInsrt(float insrt) {
-		this.insrt = insrt;
+	public void setPrmrt(float prmrt) {
+		this.prmrt = prmrt;
 	}
-	public long getRtcnt() {
-		return rtcnt;
+	public long getRfcnt() {
+		return rfcnt;
 	}
-	public void setRtcnt(long rtcnt) {
-		this.rtcnt = rtcnt;
+	public void setRfcnt(long rfcnt) {
+		this.rfcnt = rfcnt;
 	}
-	public float getRtrt() {
-		return rtrt;
+	public float getRfrt() {
+		return rfrt;
 	}
-	public void setRtrt(float rtrt) {
-		this.rtrt = rtrt;
+	public void setRfrt(float rfrt) {
+		this.rfrt = rfrt;
 	}
-	public long getGinsrf() {
-		return ginsrf;
+	public long getPrmpp() {
+		return prmpp;
 	}
-	public void setGinsrf(long ginsrf) {
-		this.ginsrf = ginsrf;
+	public void setPrmpp(long prmpp) {
+		this.prmpp = prmpp;
 	}
 	public long getAcdcnt() {
 		return acdcnt;
@@ -194,17 +208,17 @@ public class CityesStatusVo {
 	public void setAcdcnt(long acdcnt) {
 		this.acdcnt = acdcnt;
 	}
-	public long getInsra() {
-		return insra;
+	public long getIdm() {
+		return idm;
 	}
-	public void setInsra(long insra) {
-		this.insra = insra;
+	public void setIdm(long idm) {
+		this.idm = idm;
 	}
-	public long getGinsra() {
-		return ginsra;
+	public long getIdmpa() {
+		return idmpa;
 	}
-	public void setGinsra(long ginsra) {
-		this.ginsra = ginsra;
+	public void setIdmpa(long idmpa) {
+		this.idmpa = idmpa;
 	}
 	public float getAcdrt() {
 		return acdrt;
@@ -212,22 +226,22 @@ public class CityesStatusVo {
 	public void setAcdrt(float acdrt) {
 		this.acdrt = acdrt;
 	}
-	public float getShrt() {
-		return shrt;
+	public float getLosrt() {
+		return losrt;
 	}
-	public void setShrt(float shrt) {
-		this.shrt = shrt;
+	public void setLosrt(float losrt) {
+		this.losrt = losrt;
 	}
-	
 	@Override
 	public String toString() {
-		return "JoinAcidVo [" + (sido != null ? "sido=" + sido + ", " : "") + "tgar=" + tgar + ", sbfm=" + sbfm
-				+ ", pcycnt=" + pcycnt + ", objcnt=" + objcnt + ", sttInsrf=" + sttInsrf + ", sbsrar=" + sbsrar
-				+ ", arsbrt=" + arsbrt + ", insrf=" + insrf + ", govf=" + govf + ", sidof=" + sidof + ", sggf=" + sggf
-				+ ", fmf=" + fmf + ", rta=" + rta + ", gova=" + gova + ", sidoa=" + sidoa + ", sgga=" + sgga + ", fma="
-				+ fma + ", rta1=" + rta1 + ", fma1=" + fma1 + ", riskInsrf=" + riskInsrf + ", bsnInsrf=" + bsnInsrf
-				+ ", insrt=" + insrt + ", rtcnt=" + rtcnt + ", rtrt=" + rtrt + ", ginsrf=" + ginsrf + ", acdcnt="
-				+ acdcnt + ", insra=" + insra + ", ginsra=" + ginsra + ", acdrt=" + acdrt + ", shrt=" + shrt + "]";
+		return "CityesStatusVo [cntty=" + cntty + ", sidocd=" + sidocd + ", sidonm=" + sidonm + ", tagar=" + tagar
+				+ ", sbfmcnt=" + sbfmcnt + ", pcycnt=" + pcycnt + ", objcnt=" + objcnt + ", sbam=" + sbam + ", sbar="
+				+ sbar + ", asbbrt=" + asbbrt + ", prms=" + prms + ", govprm=" + govprm + ", sidoprm=" + sidoprm
+				+ ", sggprm=" + sggprm + ", fmprm=" + fmprm + ", rfas=" + rfas + ", govrfa=" + govrfa + ", sidorfa="
+				+ sidorfa + ", sggrfa=" + sggrfa + ", cnbnrfa=" + cnbnrfa + ", rfprm=" + rfprm + ", rffmcnt=" + rffmcnt
+				+ ", riskprm=" + riskprm + ", grsprm=" + grsprm + ", prmrt=" + prmrt + ", rfcnt=" + rfcnt + ", rfrt="
+				+ rfrt + ", prmpp=" + prmpp + ", acdcnt=" + acdcnt + ", idm=" + idm + ", idmpa=" + idmpa + ", acdrt="
+				+ acdrt + ", losrt=" + losrt + "]";
 	}
 	
 	

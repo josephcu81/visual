@@ -124,6 +124,6 @@
 	
 	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 
-  <script src="/js/status/join.js"></script>
+  <script src="/js/status/join-and-acident.js"></script>
 </body>
 </html>

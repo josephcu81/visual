@@ -110,14 +110,14 @@ var dash = {
 				latLng: [36.49, 128.88],
 				name: '경북: 35%'
 			}, {
-				latLng: [37.43, 126.98],
-				name: '과천시: 25%'
+				latLng: [36.34, 127.39],
+				name: '대전광역시: 25%'
 			}, {
 				latLng: [35.16, 126.85],
-				name: '광주: 10%'
+				name: '광주광역시: 10%'
 			}, {
-				latLng: [32.77, -96.79],
-				name: 'Dallas: 225'
+				latLng: [33.43, 126.56],
+				name: '제주: 23%'
 			}]
 		});
 	}
@@ -125,10 +125,10 @@ var dash = {
 		new Chart(document.getElementById("chartjs-dashboard-pie"), {
 			type: 'pie',
 			data: {
-				labels: ["30대 이하", "40대", "50대", "60대 이상"],
+				labels: ["30대 이하", "40대", "50대", "60대", "70대 이상"],
 				datasets: [{
-					data: [180899, 242578, 1204724, 709149],
-					backgroundColor: ["#0cc2aa", "#fcc100", "#f44455", "#E8EAED"],
+					data: [3051, 12150, 37692, 59580, 57933],
+					backgroundColor: ["#a180da", "#fcc100", "#f44455", "#5fc27e", "#5b7dff"],
 					borderColor: "transparent"
 				}]
 			},

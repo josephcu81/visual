@@ -7,6 +7,6 @@ import kr.apfs.status.vo.CityesStatusVo;
 
 public interface CityesService {
 
-	public List<CityesStatusVo> list(Map<String, Object> condition);
+	public List<CityesStatusVo> getCityesStatusList(Map<String, Object> condition);
 
 }

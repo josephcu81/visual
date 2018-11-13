@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
-import kr.apfs.status.vo.JoinStatusVo;
+import kr.apfs.status.vo.CityesStatusVo;
 
 @Mapper("CityesMapper")
 public interface CityesMapper {
@@ -13,6 +13,6 @@ public interface CityesMapper {
 	 * @param condition
 	 * @return
 	 */
-	public List<JoinStatusVo> selectJoinStatusList(Map<String, Object> condition);
+	public List<CityesStatusVo> selectCityesStatusList(Map<String, Object> condition);
 
 }

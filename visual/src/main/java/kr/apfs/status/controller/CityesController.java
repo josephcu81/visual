@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import kr.apfs.common.service.CommonService;
 import kr.apfs.status.service.CityesService;
 
+
 @RequestMapping("/status/cityes")
 @Controller
 public class CityesController {
@@ -52,6 +53,6 @@ public class CityesController {
 	@ResponseBody
 	@RequestMapping("/list")
 	public String list(@RequestParam Map<String, Object> condition, ModelMap model) {
-		return new Gson().toJson(cityesService.list(condition));
+		return new Gson().toJson(cityesService.getCityesStatusList(condition));
 	}
 }
