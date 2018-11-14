@@ -259,54 +259,58 @@ public class WeatherVo {
 		if (this.wrnNm != null) {
 			return this.wrnNm;
 		}
-		switch(this.wrnCd) {
-		case "W2":
-			this.wrnNm="강풍주의보";
-			break;
-		case "W3":
-			this.wrnNm="강풍경보";
-			break;
-		case "R2":
-			this.wrnNm="호우주의보";
-			break;
-		case "R3":
-			this.wrnNm="호우경보";
-			break;
-		case "S2":
-			this.wrnNm="대설주의보";
-			break;
-		case "S3":
-			this.wrnNm="대설경보";
-			break;
-		case "H2":
-			this.wrnNm="폭염주의보";
-			break;
-		case "H3":
-			this.wrnNm="폭염주의보";
-			break;
-		case "D2":
-			this.wrnNm="건조주의보";
-			break;
-		case "D3":
-			this.wrnNm="건조경보";
-			break;
-		case "C2":
-			this.wrnNm="한파주의보";
-			break;
-		case "C3":
-			this.wrnNm="한파경보";
-			break;
-		case "T2":
-			this.wrnNm="태풍주의보";
-			break;
-		case "T3":
-			this.wrnNm="태풍경보";
-			break;
-		default :
-			this.wrnNm="";
-			break;
+		if(this.wrnCd != null) {
+			switch(this.wrnCd) {
+			case "W2":
+				this.wrnNm="강풍주의보";
+				break;
+			case "W3":
+				this.wrnNm="강풍경보";
+				break;
+			case "R2":
+				this.wrnNm="호우주의보";
+				break;
+			case "R3":
+				this.wrnNm="호우경보";
+				break;
+			case "S2":
+				this.wrnNm="대설주의보";
+				break;
+			case "S3":
+				this.wrnNm="대설경보";
+				break;
+			case "H2":
+				this.wrnNm="폭염주의보";
+				break;
+			case "H3":
+				this.wrnNm="폭염주의보";
+				break;
+			case "D2":
+				this.wrnNm="건조주의보";
+				break;
+			case "D3":
+				this.wrnNm="건조경보";
+				break;
+			case "C2":
+				this.wrnNm="한파주의보";
+				break;
+			case "C3":
+				this.wrnNm="한파경보";
+				break;
+			case "T2":
+				this.wrnNm="태풍주의보";
+				break;
+			case "T3":
+				this.wrnNm="태풍경보";
+				break;
+			default :
+				this.wrnNm="";
+				break;
+			}
+			return this.wrnNm;
+		} else {
+			return null;
 		}
-		return this.wrnNm;
 	}
 
 
