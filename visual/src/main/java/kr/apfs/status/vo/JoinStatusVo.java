@@ -29,6 +29,8 @@ public class JoinStatusVo {
 	private long arall;
 	private String crtid;
 	private String crtdt;
+	private String kor;
+	private String frn;
 
 	public String getCntrctYy() {
 		return cntrctYy;
@@ -236,6 +238,22 @@ public class JoinStatusVo {
 
 	public void setCrtdt(String crtdt) {
 		this.crtdt = crtdt;
+	}
+
+	public String getKor() {
+		return kor;
+	}
+
+	public void setKor(String kor) {
+		this.kor = kor;
+	}
+
+	public String getFrn() {
+		return frn;
+	}
+
+	public void setFrn(String frn) {
+		this.frn = frn;
 	}
 
 	@Override

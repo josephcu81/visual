@@ -47,8 +47,8 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">정책보험재가입자 비율</a></li>
-              					<li class="sidebar-item active"><a class="sidebar-link" href="/analysis/weather/index">주산지지역의날씨정보</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<li class="sidebar-item active"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price/index">농작물가격정보(AT센터)</a></li>
               				</ul>
 						</li>
@@ -72,14 +72,14 @@
 				<!-- Content -->
 				<main class="content">
 					<div class="container-fluid p-0">
-						<h1 class="h3 mb-3">농주산지 기상정보</h1>	
+						<h1 class="h3 mb-3">농주산지 기상정보(기상청 API연계)</h1>	
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-body">
 										<form class="form-inline">
 											<div class="form-group">
-												<label class="form-label mr-3"  for="daterange">통계조회일자</label>
+												<label class="form-label mr-5"  for="daterange">통계조회일자</label>
 												<input class="form-control mr-5" type="text" id="daterange" name="daterange" style="width: 213px;" />
 												
 												<label class="form-label mr-3" for="areaid">주산지</label>
@@ -101,9 +101,9 @@
 						
 							<div class="col-md-12">
 								<div class="card">
-									<div class="card-header">
+								<!--	<div class="card-header">
 										<h5 class="card-title">기상정보 목록</h5>										
-									</div>
+									</div> -->
 								<!-- 내용 -->
 									<table class="grid" id="jqGrid"></table>
 					    			<div id="jqGridPager"></div>

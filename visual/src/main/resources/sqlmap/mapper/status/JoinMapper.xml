@@ -28,7 +28,9 @@
 			ar15e,
 			arall,
 			crtid,
-			to_char(crtdt, 'YYYY-MM-DD') as crtdt
+			to_char(crtdt, 'YYYY-MM-DD') as crtdt,
+			kor,
+			frn
 		FROM status3
 		WHERE 1=1
 	</select>

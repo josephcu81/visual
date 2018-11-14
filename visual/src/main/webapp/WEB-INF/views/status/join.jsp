@@ -46,8 +46,8 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">정책보험재가입자 비율</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">주산지지역의날씨정보</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price/index">농작물가격정보(AT센터)</a></li>
               				</ul>
 						</li>
@@ -127,3 +127,6 @@
   	<script src="/js/status/join.js"></script>
 </body>
 </html>
+
+<!-- 가입자현황에 차트버튼을 2개 만듬, 1:차트(연령별) 2:차트(가입면적별) 각버튼클릭시
+차트화면이 나타나서 디폴트로 파이차트가 나오고 차트변경버튼? 활용해서 막대나, 선으로도 변경가능하게 프로그램요망  -->

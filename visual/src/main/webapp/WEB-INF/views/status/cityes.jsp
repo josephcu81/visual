@@ -47,8 +47,8 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">정책보험재가입자 비율</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">주산지지역의날씨정보</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price/index">농작물가격정보(AT센터)</a></li>
               				</ul>
 						</li>
@@ -77,7 +77,7 @@
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
-										<h5 class="card-title">가입 및 사고 현황 목록</h5>										
+										<h5 class="card-title">가입 및 사고 현황 목록(단위: ha, 호, 건, 백만원, %)</h5>										
 									</div>
 								<!-- 내용 -->
 									<table class="grid" id="jqGrid"></table>

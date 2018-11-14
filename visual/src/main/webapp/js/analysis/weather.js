@@ -64,15 +64,17 @@ var weatherProc = {
 		var option = {
 				url: './getData',
 				colNames: [
-					'일자', '지역아이디', '지역이름','작물ID','작물명','작물특성이름','일평균기온','일최고기온','일최저기온','일평균상대습도','일최저상대습도','일강수량','일평균풍속','일누적일조시간','특보발효여부','특보코드','특보명'
+					'조회일자', '지역ID', '지역이름','작물ID','작물명','작물특성이름',
+					'일평균기온','일최고기온','일최저기온','일평균상대습도','일최저상대습도',
+					'일강수량','일평균풍속','일누적일조시간','특보발효여부','특보코드','특보명'
 				],
 				colModel: [
-					{ name: 'ymd', index:'ymd', width:100 }
+					{ name: 'ymd', index:'ymd', width:100,  align: 'center' }
 					,{ name: 'areaId', index:'areaId', width:100,  align: 'right'}
-					,{ name: 'areaName', index:'areaName', width:100,  align: 'right'}
+					,{ name: 'areaName', index:'areaName', width:100,  align: 'center'}
 					,{ name: 'paCropSpeId', index:'paCropSpeId', width:100,  align: 'right' }
-					,{ name: 'paCropName', index:'paCropName', width:100,  align: 'right' }
-					,{ name: 'paCropSpeName', index:'paCropSpeName', width:100,  align: 'right'}
+					,{ name: 'paCropName', index:'paCropName', width:100,  align: 'center' }
+					,{ name: 'paCropSpeName', index:'paCropSpeName', width:100,  align: 'center'}
 					,{ name: 'dayAvgTa', index:'dayAvgTa', width:100,  align: 'right',formatter:'integer' }
 					,{ name: 'dayMaxTa', index:'dayMaxTa', width:100,  align: 'right',formatter:'integer' }
 					,{ name: 'dayMinTa', index:'dayMinTa', width:100,  align: 'right',formatter:'integer' }
@@ -81,13 +83,14 @@ var weatherProc = {
 					,{ name: 'daySumRn', index:'daySumRn', width:100,  align: 'right',formatter:'integer' }
 					,{ name: 'dayAvgWs', index:'dayAvgWs', width:100,  align: 'right',formatter:'integer' }
 					,{ name: 'daySumSs', index:'daySumSs', width:100,  align: 'right'}
-					,{ name: 'wrncd', index:'wrncd', width:100,  align: 'right'}
-					,{ name: 'wrnnm', index:'wrnnm', width:100,  align: 'right'}
-					,{ name: 'crtid', index:'crtid', width:100,  align: 'right'}
+					,{ name: 'wrnCount', index:'wrnCount', width:100,  align: 'center'}
+					,{ name: 'wrnCd', index:'wrnCd', width:100,  align: 'center'}
+					,{ name: 'wrnNm', index:'wrnNm', width:100,  align: 'center'}
+					
 					// {"dayMaxTa":20.2,"dayAvgWs":0.6,"paCropSpeId":"PA080101","paCropSpeName":"봄","paCropName":"당근","ymd":"2018-10-16 00:00:00","areaId":2600000088,"dayAvgTa":16.1,"areaName":"부산","dayAvgRhm":68,"dayMinTa":13.9,"daySumSs":1.9,"dayMinRhm":48.7,"daySumRn":0}
 				],
-				height: 400,
-				rowNum: 30,
+				height: 680,
+				rowNum: 500,
 				shrinkToFit : false,
 				autowidth:true,
 				formatter : {

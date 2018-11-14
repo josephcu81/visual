@@ -14,6 +14,6 @@
 		SELECT 
 	        area_id AS code
 	        ,area_nm AS name
-	    FROM kma_area
+	    FROM kma_area order by area_id
 	</select>
 </mapper>

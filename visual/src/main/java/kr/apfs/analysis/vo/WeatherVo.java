@@ -15,7 +15,7 @@ public class WeatherVo {
 	private int daysumrn;
 	private int dayavgws;
 	private int daysumss;
-	private String wrncount;
+	private int wrncount;
 	private String wrncd;
 	private String wrnnm;
 	private String crtid;
@@ -104,10 +104,10 @@ public class WeatherVo {
 	public void setDaysumss(int daysumss) {
 		this.daysumss = daysumss;
 	}
-	public String getWrncount() {
+	public int getWrncount() {
 		return wrncount;
 	}
-	public void setWrncount(String wrncount) {
+	public void setWrncount(int wrncount) {
 		this.wrncount = wrncount;
 	}
 	public String getWrncd() {
@@ -117,6 +117,52 @@ public class WeatherVo {
 		this.wrncd = wrncd;
 	}
 	public String getWrnnm() {
+		switch(wrncd) {
+		case "W2":
+			wrnnm="강풍주의보";
+			break;
+		case "W3":
+			wrnnm="강풍경보";
+			break;
+		case "R2":
+			wrnnm="호우주의보";
+			break;
+		case "R3":
+			wrnnm="호우경보";
+			break;
+		case "S2":
+			wrnnm="대설주의보";
+			break;
+		case "S3":
+			wrnnm="대설경보";
+			break;
+		case "H2":
+			wrnnm="폭염주의보";
+			break;
+		case "H3":
+			wrnnm="폭염주의보";
+			break;
+		case "D2":
+			wrnnm="건조주의보";
+			break;
+		case "D3":
+			wrnnm="건조경보";
+			break;
+		case "C2":
+			wrnnm="한파주의보";
+			break;
+		case "C3":
+			wrnnm="한파경보";
+			break;
+		case "T2":
+			wrnnm="태풍주의보";
+			break;
+		case "T3":
+			wrnnm="태풍경보";
+			break;
+		default :
+			wrnnm="";
+		}
 		return wrnnm;
 	}
 	public void setWrnnm(String wrnnm) {
@@ -134,6 +180,7 @@ public class WeatherVo {
 	public void setCrtdt(String crtdt) {
 		this.crtdt = crtdt;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -153,9 +200,7 @@ public class WeatherVo {
 		builder.append("dayavgta=").append(dayavgta).append(", daymaxta=").append(daymaxta).append(", dayminta=")
 				.append(dayminta).append(", dayavgrhm=").append(dayavgrhm).append(", dayminrhm=").append(dayminrhm)
 				.append(", daysumrn=").append(daysumrn).append(", dayavgws=").append(dayavgws).append(", daysumss=")
-				.append(daysumss).append(", ");
-		if (wrncount != null)
-			builder.append("wrncount=").append(wrncount).append(", ");
+				.append(daysumss).append(", ").append(wrncount).append(", ");
 		if (wrncd != null)
 			builder.append("wrncd=").append(wrncd).append(", ");
 		if (wrnnm != null)

@@ -80,8 +80,8 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">정책보험재가입자 비율</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">주산지지역의날씨정보</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price/index">농작물가격정보(AT센터)</a></li>
               				</ul>
 						</li>
@@ -148,7 +148,7 @@
 												<p class="mb-0">사고율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
-												<div data-label="10%" class="doughnut mt-2 doughnut-success doughnut-20"></div>
+												<div data-label="40%" class="doughnut mt-2 doughnut-success doughnut-20"></div>
 											</div>
 										</div>
 									</div>
@@ -163,7 +163,7 @@
 												<p class="mb-0">손해율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
-												<div data-label="10%" class="doughnut mt-2 doughnut-warning doughnut-10"></div>
+												<div data-label="35%" class="doughnut mt-2 doughnut-warning doughnut-10"></div>
 											</div>
 										</div>
 									</div>

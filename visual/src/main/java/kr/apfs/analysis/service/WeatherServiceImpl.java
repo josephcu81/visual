@@ -51,7 +51,7 @@ public class WeatherServiceImpl implements WeatherService {
 		String paCropSpeId = (String) condition.get("paCropSpeId");
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&numOfRows=99&serviceKey="+serviceKey);
+		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=999&serviceKey="+serviceKey);
 		CloseableHttpResponse response1 = null;
 		try {
 			response1 = httpclient.execute(httpGet);
