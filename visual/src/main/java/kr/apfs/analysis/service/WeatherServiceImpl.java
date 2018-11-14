@@ -15,8 +15,13 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.json.XML;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import kr.apfs.analysis.mapper.WeatherMapper;
 import kr.apfs.analysis.vo.WeatherVo;
@@ -24,6 +29,7 @@ import support.util.ResultVo;
 
 @Service
 public class WeatherServiceImpl implements WeatherService {
+	private final Logger logger = LoggerFactory.getLogger(WeatherServiceImpl.class);
 	@Autowired
 	private WeatherMapper weatherMapper;
 
@@ -39,10 +45,10 @@ public class WeatherServiceImpl implements WeatherService {
 	}
 
 	@Override
-	public String saveAndGetData(Map<String, Object> condition) {
+	public List<WeatherVo> saveAndGetData(Map<String, Object> condition) {
 		// 추후 별도 페이징 관련 처리 필요.
-		ResultVo result = new ResultVo(true, "API 요청을 완료 하였습니다.");
-		String data = "";
+		//ResultVo result = new ResultVo(true, "API 요청을 완료 하였습니다.");
+		List<WeatherVo> result = null;
 		String serviceKey= "t%2FW%2BgR8MjLNnoqLoxLWpIrx%2BT9%2F%2FKBemixdk8wZxqBmz53x1ykp1dYhyotCSk4xj6Os3Ri7YZVKSAeEljAfksg%3D%3D";
 		
 		String stYmd = (String) condition.get("stYmd");
@@ -54,15 +60,25 @@ public class WeatherServiceImpl implements WeatherService {
 		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=999&serviceKey="+serviceKey);
 		CloseableHttpResponse response1 = null;
 		try {
+			// api 호출 및 요청 결과 객체 변환
 			response1 = httpclient.execute(httpGet);
 		    HttpEntity entity1 = response1.getEntity();
 		    String responseString = EntityUtils.toString(entity1, "UTF-8");
 		    JSONObject jsonObj = XML.toJSONObject(responseString);
-		    //data.response.body.items;
 		    JSONObject items =  jsonObj.getJSONObject("response").getJSONObject("body").getJSONObject("items");
-		    System.out.println(items.toString());
-		    data = items.getJSONArray("item").toString();
-		    //result.put("data", items);
+		    String data = items.getJSONArray("item").toString();
+		    
+		    Gson gson = new Gson();
+		    System.out.println(data);
+		    List<WeatherVo> weatherList = gson.fromJson(data, new TypeToken<List<WeatherVo>>(){}.getType());
+		    
+		    System.out.println(weatherList);
+		    Map<String, Object> weatherInfo = new HashMap<String, Object>();
+		    weatherInfo.put("list", weatherList);
+		    
+		    weatherMapper.insertWeatherInfo(weatherInfo);
+		    
+		    result =  weatherList;
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -74,7 +90,7 @@ public class WeatherServiceImpl implements WeatherService {
 				}
 			}
 		}
-		return data;
+		return result;
 	}
 
 }

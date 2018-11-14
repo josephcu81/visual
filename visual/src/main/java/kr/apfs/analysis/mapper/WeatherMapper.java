@@ -9,9 +9,9 @@ public interface WeatherMapper {
 	
 	/**
 	 * 기상정보 저장 처리
-	 * @param data
+	 * @param weatherInfo
 	 * @return
 	 */
-	int insertWeatherInfo(Map<String, Object> data);
+	int insertWeatherInfo(Map<String, Object> weatherInfo);
 
 }

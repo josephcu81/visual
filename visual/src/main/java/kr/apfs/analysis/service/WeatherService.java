@@ -15,6 +15,6 @@ public interface WeatherService {
 	 */
 	public ResultVo save(List<WeatherVo> weatherList);
 
-	public String saveAndGetData(Map<String, Object> condition);
+	public List<WeatherVo> saveAndGetData(Map<String, Object> condition);
 
 }

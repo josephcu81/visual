@@ -64,6 +64,6 @@ public class WeatherController {
 	@ResponseBody
 	@RequestMapping("/getData")
 	public String getData(@RequestParam Map<String, Object> condition, ModelMap model) {
-		return weatherService.saveAndGetData(condition);
+		return new Gson().toJson(weatherService.saveAndGetData(condition));
 	}
 }
