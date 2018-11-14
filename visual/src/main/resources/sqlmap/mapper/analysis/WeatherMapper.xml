@@ -3,7 +3,7 @@
 <mapper namespace="kr.apfs.analysis.mapper.WeatherMapper">
 	<insert id="insertWeatherInfo" parameterType="java.util.Map">
 		<foreach collection="list" item="item" index="index" separator=" " open="INSERT ALL" close="SELECT * FROM DUAL">
-		INSERT INTO kmaday (
+		INTO kmaday (
 			ymd
 			,areaid
 			,areaname
@@ -20,28 +20,26 @@
 			,daysumss
 			,wrncount
 			,wrncd
-			,wrnnm
 			,crtid
 			,crtdt					
 		) VALUES (
-			#{item.ymd}
-			,#{item.areaId}
-			,#{item.areaName}
-			,#{item.paCropSpeId}
-			,#{item.paCropName}
-			,#{item.paCropSpeName}
-			,#{item.dayAvgTa}
-			,#{item.dayMaxTa}
-			,#{item.dayMinTa}
-			,#{item.dayAvgRhm}
-			,#{item.dayMinRhm}
-			,#{item.daySumRn}
-			,#{item.dayAvgWs}
-			,#{item.daySumSs}
-			,#{item.wrnCount}
-			,#{item.wrnCd}
-			,#{item.wrnNm}
-			,#{item.crtid}
+			#{item.ymd, jdbcType=VARCHAR}
+			,#{item.areaId, jdbcType=VARCHAR}
+			,#{item.areaName, jdbcType=VARCHAR}
+			,#{item.paCropSpeId, jdbcType=VARCHAR}
+			,#{item.paCropName, jdbcType=VARCHAR}
+			,#{item.paCropSpeName, jdbcType=VARCHAR}
+			,#{item.dayAvgTa, jdbcType=NUMERIC}
+			,#{item.dayMaxTa, jdbcType=NUMERIC}
+			,#{item.dayMinTa, jdbcType=NUMERIC}
+			,#{item.dayAvgRhm, jdbcType=NUMERIC}
+			,#{item.dayMinRhm, jdbcType=NUMERIC}
+			,#{item.daySumRn, jdbcType=NUMERIC}
+			,#{item.dayAvgWs, jdbcType=NUMERIC}
+			,#{item.daySumSs, jdbcType=NUMERIC}
+			,#{item.wrnCount, jdbcType=VARCHAR}
+			,#{item.wrnCd, jdbcType=VARCHAR}
+			,#{item.crtid, jdbcType=VARCHAR}
 			,SYSDATE
 		)
 		</foreach>

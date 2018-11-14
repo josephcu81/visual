@@ -45,6 +45,7 @@ public class WeatherServiceImpl implements WeatherService {
 	}
 
 	@Override
+	@Transactional
 	public List<WeatherVo> saveAndGetData(Map<String, Object> condition) {
 		// 추후 별도 페이징 관련 처리 필요.
 		//ResultVo result = new ResultVo(true, "API 요청을 완료 하였습니다.");
@@ -76,7 +77,7 @@ public class WeatherServiceImpl implements WeatherService {
 		    Map<String, Object> weatherInfo = new HashMap<String, Object>();
 		    weatherInfo.put("list", weatherList);
 		    
-		    weatherMapper.insertWeatherInfo(weatherInfo);
+		   // weatherMapper.insertWeatherInfo(weatherInfo); // 중복데이터 처리에 따른 별도 처리 필요
 		    
 		    result =  weatherList;
 		} catch (IOException e) {
