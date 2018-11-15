@@ -3,6 +3,7 @@ package kr.apfs.analysis.mapper;
 import java.util.Map;
 
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
+import kr.apfs.analysis.vo.WeatherVo;
 
 @Mapper("WeatherMapper")
 public interface WeatherMapper {
@@ -12,6 +13,6 @@ public interface WeatherMapper {
 	 * @param weatherInfo
 	 * @return
 	 */
-	int insertWeatherInfo(Map<String, Object> weatherInfo);
+	int insertWeatherInfo(WeatherVo weatherInfo);
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.apfs.analysis.mapper.WeatherMapper">
-	<insert id="insertWeatherInfo" parameterType="java.util.Map">
+	<!-- <insert id="insertWeatherInfo" parameterType="java.util.Map">
 	
 	         
 	<foreach collection="list" item="item" index="index" separator=" " open="INSERT ALL" close="SELECT * FROM DUAL">
@@ -48,5 +48,53 @@
 			,SYSDATE
 		)
 		</foreach>
+	</insert> -->
+	<insert id="insertWeatherInfo" parameterType="kr.apfs.analysis.vo.WeatherVo">
+	
+		MERGE INTO kmaday
+		USING DUAL
+		ON (ymd = #{ymd} and areaid=#{areaId} and cropspeid=#{paCropSpeId} )
+		WHEN NOT MATCHED THEN
+		 INSERT (
+		      ymd
+			,areaid
+			,areaname
+			,cropspeid
+			,cronam
+			,cropspename
+			,dayavgta
+			,daymaxta
+			,dayminta
+			,dayavgrhm
+			,dayminrhm
+			,daysumrn
+			,dayavgws
+			,daysumss
+			,wrncount
+			,wrncd
+			,wrnnm
+			,crtid
+			,crtdt
+	   	) VALUES ( 
+		     #{ymd, jdbcType=VARCHAR}
+			,#{areaId, jdbcType=VARCHAR}
+			,#{areaName, jdbcType=VARCHAR}
+			,#{paCropSpeId, jdbcType=VARCHAR}
+			,#{paCropName, jdbcType=VARCHAR}
+			,#{paCropSpeName, jdbcType=VARCHAR}
+			,#{dayAvgTa, jdbcType=NUMERIC}
+			,#{dayMaxTa, jdbcType=NUMERIC}
+			,#{dayMinTa, jdbcType=NUMERIC}
+			,#{dayAvgRhm, jdbcType=NUMERIC}
+			,#{dayMinRhm, jdbcType=NUMERIC}
+			,#{daySumRn, jdbcType=NUMERIC}
+			,#{dayAvgWs, jdbcType=NUMERIC}
+			,#{daySumSs, jdbcType=NUMERIC}
+			,#{wrnCount, jdbcType=VARCHAR}
+			,#{wrnCd, jdbcType=VARCHAR}
+			,#{wrnNm, jdbcType=VARCHAR}
+			,#{crtid, jdbcType=VARCHAR}
+			,SYSDATE
+		)
 	</insert>
 </mapper>

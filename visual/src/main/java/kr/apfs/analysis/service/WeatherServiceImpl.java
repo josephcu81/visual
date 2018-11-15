@@ -39,7 +39,10 @@ public class WeatherServiceImpl implements WeatherService {
 		ResultVo result = new ResultVo(Boolean.TRUE, "기상정보 저장을 완료 하였습니다.");
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("list", list);
-		int insertCnt= weatherMapper.insertWeatherInfo(data);
+		int insertCnt = 0;
+		for(WeatherVo weatherInfo :list) {
+			insertCnt += weatherMapper.insertWeatherInfo(weatherInfo);
+		}
 		result.put("insertCnt", insertCnt);
 		return result;
 	}
@@ -73,13 +76,15 @@ public class WeatherServiceImpl implements WeatherService {
 		    System.out.println(data);
 		    List<WeatherVo> weatherList = gson.fromJson(data, new TypeToken<List<WeatherVo>>(){}.getType());
 		    
-		    System.out.println(weatherList);
-		    Map<String, Object> weatherInfo = new HashMap<String, Object>();
-		    weatherInfo.put("list", weatherList);
+		    for(WeatherVo weatherInfo : weatherList) {
+		    	weatherMapper.insertWeatherInfo(weatherInfo);
+		    }
 		    
-		   
+		    System.out.println(weatherList);
+		   /* Map<String, Object> weatherInfo = new HashMap<String, Object>();
+		    weatherInfo.put("list", weatherList);
 		     weatherMapper.insertWeatherInfo(weatherInfo); // 중복데이터 처리에 따른 별도 처리 필요
-		   
+*/		   
 		    
 		    result =  weatherList;
 		} catch (IOException e) {
