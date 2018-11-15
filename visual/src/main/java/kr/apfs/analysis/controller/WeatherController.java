@@ -39,7 +39,9 @@ public class WeatherController {
 		// 년도 목록 생성
 		
 		// 주산지 목록 조회
-		model.addAttribute("areaList", commonService.getAreaIdList());
+		//model.addAttribute("areaList", commonService.getAreaIdList());
+		
+		model.addAttribute("areaList", null);
 		
 		return "/analysis/weather";
 	}
