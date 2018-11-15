@@ -36,7 +36,7 @@ public class JoinController {
 	@RequestMapping("/index")
 	public String index(ModelMap model) {
 		// 시도 코드 목록 생성
-		//model.addAttribute("sidoList", commonService.getSidoCodeList());
+		model.addAttribute("sidoList", commonService.getSidoCodeList());
 		return "/status/join";
 	}
 	

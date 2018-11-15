@@ -33,5 +33,9 @@
 			frn
 		FROM status3
 		WHERE 1=1
+		AND cntrct_yy = #{cntrctYy}
+		<if test='sidocd != null and sidocd != ""' >
+		AND sidocd = #{sidocd}
+		</if>
 	</select>
 </mapper>
