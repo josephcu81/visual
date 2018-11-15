@@ -89,6 +89,7 @@ var weatherProc = {
 					
 					// {"dayMaxTa":20.2,"dayAvgWs":0.6,"paCropSpeId":"PA080101","paCropSpeName":"봄","paCropName":"당근","ymd":"2018-10-16 00:00:00","areaId":2600000088,"dayAvgTa":16.1,"areaName":"부산","dayAvgRhm":68,"dayMinTa":13.9,"daySumSs":1.9,"dayMinRhm":48.7,"daySumRn":0}
 				],
+				datatype: "local",
 				height: 680,
 				rowNum: 500,
 				shrinkToFit : false,
@@ -101,7 +102,7 @@ var weatherProc = {
 		        	stYmd : dateArr[0].trim(),
 		        	edYmd : dateArr[1].trim(),
 		        	areaID : $('select[name="areaid"]').val(),
-		        	paCropSpeId : "PA999999"//전체 작물
+		        	paCropSpeId : $('select[name="cropid"]').val() //"PA999999"전체 작물
 		        }
 		}
 		var girdCmpnt = new JqgridCmpnt('#jqGrid');
@@ -120,7 +121,7 @@ var weatherProc = {
          	   stYmd : dateArr[0].trim(),
 			   edYmd : dateArr[1].trim(),
 			   areaID : $('select[name="areaid"]').val(),
-			   paCropSpeId : "PA999999"//전체 작물
+			   paCropSpeId : $('select[name="cropid"]').val()
           }}).trigger("reloadGrid");
 			/*$.ajax({
 				  method: "GET",

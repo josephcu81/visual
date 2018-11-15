@@ -25,6 +25,11 @@ public class CommonServiceImpl implements CommonService {
 		return commonMapper.selectKmaAreaCode();
 	}
 	
+	@Override
+	public List<Map<String, Object>> getCropIdList() {
+		
+		return commonMapper.selectKmaCropCode();
+	}
 	
 
 }

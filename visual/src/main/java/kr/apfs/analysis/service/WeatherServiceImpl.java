@@ -58,7 +58,7 @@ public class WeatherServiceImpl implements WeatherService {
 		String paCropSpeId = (String) condition.get("paCropSpeId");
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=999&serviceKey="+serviceKey);
+		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=800&serviceKey="+serviceKey);
 		CloseableHttpResponse response1 = null;
 		try {
 			// api 호출 및 요청 결과 객체 변환
@@ -77,7 +77,9 @@ public class WeatherServiceImpl implements WeatherService {
 		    Map<String, Object> weatherInfo = new HashMap<String, Object>();
 		    weatherInfo.put("list", weatherList);
 		    
-		   // weatherMapper.insertWeatherInfo(weatherInfo); // 중복데이터 처리에 따른 별도 처리 필요
+		   
+		     weatherMapper.insertWeatherInfo(weatherInfo); // 중복데이터 처리에 따른 별도 처리 필요
+		   
 		    
 		    result =  weatherList;
 		} catch (IOException e) {

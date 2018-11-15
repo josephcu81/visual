@@ -89,6 +89,13 @@
 										          	<option value="${area.CODE }">${area.NAME }</option>
 										          </c:forEach>
 										        </select>
+										        <label class="form-label mr-3" for="cropid">작물명(특성)</label>
+												<select class="custom-select mr-3" id="cropid" name="cropid">
+										          <option value="PA999999" selected>전체작물</option>
+										          <c:forEach items="${cropList }" var="crop">
+										          	<option value="${crop.CODE }">${crop.NAME }</option>
+										          </c:forEach>
+										        </select>
 											</div>
 											<div class="ml-4">	
 												<button type="button" class="btn btn-primary ml-2" id="btn-search">조회</button>

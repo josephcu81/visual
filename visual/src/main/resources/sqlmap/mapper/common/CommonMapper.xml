@@ -16,4 +16,11 @@
 	        ,area_nm AS name
 	    FROM kma_area order by area_id
 	</select>
+	
+	<select id="selectKmaCropCode" resultType="java.util.Map">
+		SELECT 
+	        cropid AS code
+	        ,cropnm AS name
+	    FROM kma_crop order by cropid
+	</select>
 </mapper>

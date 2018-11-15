@@ -16,4 +16,6 @@ public interface CommonService {
 	public List<Map<String, Object>> getSidoCodeList();
 
 	public List<Map<String, Object>> getAreaIdList();
+	
+	public List<Map<String, Object>> getCropIdList();
 }

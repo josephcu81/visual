@@ -2,9 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.apfs.analysis.mapper.WeatherMapper">
 	<insert id="insertWeatherInfo" parameterType="java.util.Map">
-		<foreach collection="list" item="item" index="index" separator=" " open="INSERT ALL" close="SELECT * FROM DUAL">
+	
+	         
+	<foreach collection="list" item="item" index="index" separator=" " open="INSERT ALL" close="SELECT * FROM DUAL">
+  		
 		INTO kmaday (
-			ymd
+		      ymd
 			,areaid
 			,areaname
 			,cropspeid
@@ -20,10 +23,11 @@
 			,daysumss
 			,wrncount
 			,wrncd
+			,wrnnm
 			,crtid
-			,crtdt					
-		) VALUES (
-			#{item.ymd, jdbcType=VARCHAR}
+			,crtdt
+	   	) VALUES ( 
+		     #{item.ymd, jdbcType=VARCHAR}
 			,#{item.areaId, jdbcType=VARCHAR}
 			,#{item.areaName, jdbcType=VARCHAR}
 			,#{item.paCropSpeId, jdbcType=VARCHAR}
@@ -39,6 +43,7 @@
 			,#{item.daySumSs, jdbcType=NUMERIC}
 			,#{item.wrnCount, jdbcType=VARCHAR}
 			,#{item.wrnCd, jdbcType=VARCHAR}
+			,#{item.wrnNm, jdbcType=VARCHAR}
 			,#{item.crtid, jdbcType=VARCHAR}
 			,SYSDATE
 		)

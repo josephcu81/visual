@@ -18,5 +18,10 @@ public interface CommonMapper {
 	 * @return
 	 */
 	List<Map<String, Object>> selectKmaAreaCode();
+	/**
+	 * 작물조회
+	 * @return
+	 */
+	List<Map<String, Object>> selectKmaCropCode();
 
 }
