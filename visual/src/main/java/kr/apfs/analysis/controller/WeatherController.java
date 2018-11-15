@@ -40,7 +40,8 @@ public class WeatherController {
 		
 		// 주산지 목록 조회
 		model.addAttribute("areaList", commonService.getAreaIdList());
-		
+		//  목록 조회
+		model.addAttribute("cropList", commonService.getCropIdList());
 		return "/analysis/weather";
 	}
 	

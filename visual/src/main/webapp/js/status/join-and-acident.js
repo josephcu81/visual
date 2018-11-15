@@ -12,37 +12,37 @@ $(document).ready(function() {
 			'위험보험료','영업보험료', '보험요율', '환급건수', '환급율', '건당보험료</br>(천원)', '지급건수', '보험금', '건당보험금', '사고율', '손해율'
 			],
 			colModel: [
-				{ name: 'sidonm', index:'sidonm', width:100,  align: 'center',formatter:'text' }
-				,{ name: 'tagar', index:'tagar', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sbfmcnt', index:'sbfmcnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'pcycnt', index:'pcycnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'objcnt', index:'objcnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sbam', index:'sbam', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sbar', index:'sbar', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'asbrt', index:'asbrt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'prms', index:'prms', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'govprm', index:'govprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sidoprm', index:'sidoprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sggprm', index:'sggprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'fmprm', index:'fmprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rfas', index:'rfas', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'govrfa', index:'govrfa', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sidorfa', index:'sidorfa', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'sggrfa', index:'sggrfa', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'fmrfa', index:'fmrfa', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rfprm', index:'rfprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rffmacnt', index:'rffmacnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'riskprm', index:'riskInsrf', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'grsprm', index:'grsprm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'prmrt', index:'prmrt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rfcnt', index:'rfcnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rfrt', index:'rfrt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'rrmpp', index:'rrmpp', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'acdcnt', index:'acdcnt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'idm', index:'idm', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'idmpa', index:'idmpa', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'acdrt', index:'acdrt', width:100,  align: 'right',formatter:'integer' }
-				,{ name: 'losrt', index:'losrt', width:100,  align: 'right',formatter:'integer'	 }
+				{ name: 'sidonm', index:'sidonm', width:95,  align: 'center',formatter:'text' }
+				,{ name: 'tagar', index:'tagar', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sbfmcnt', index:'sbfmcnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'pcycnt', index:'pcycnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'objcnt', index:'objcnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sbam', index:'sbam', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sbar', index:'sbar', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'asbrt', index:'asbrt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'prms', index:'prms', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'govprm', index:'govprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sidoprm', index:'sidoprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sggprm', index:'sggprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'fmprm', index:'fmprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rfas', index:'rfas', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'govrfa', index:'govrfa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sidorfa', index:'sidorfa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'sggrfa', index:'sggrfa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'fmrfa', index:'fmrfa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rfprm', index:'rfprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rffmacnt', index:'rffmacnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'riskprm', index:'riskInsrf', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'grsprm', index:'grsprm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'prmrt', index:'prmrt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rfcnt', index:'rfcnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rfrt', index:'rfrt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rrmpp', index:'rrmpp', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'acdcnt', index:'acdcnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'idm', index:'idm', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'idmpa', index:'idmpa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'acdrt', index:'acdrt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'losrt', index:'losrt', width:95,  align: 'right',formatter:'integer'	 }
 
 
 				],
@@ -57,7 +57,7 @@ $(document).ready(function() {
 	jQuery("#jqGrid").jqGrid('setGroupHeaders', {
 		  useColSpanStyle: true, 
 		  groupHeaders:[
-			{startColumnName: 'tagar', numberOfColumns: 1, titleText: '가입대상현황'}
+			{startColumnName: 'tagar', numberOfColumns: 1, titleText: '가입대상'}
 			,{startColumnName: 'sbfmcnt', numberOfColumns: 5, titleText: '보험가입현황'}
 			,{startColumnName: 'asbrt', numberOfColumns: 1 , titleText: '가입률'}
 			,{startColumnName: 'prms', numberOfColumns: 5 , titleText: '보험료'}

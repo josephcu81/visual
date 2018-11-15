@@ -148,7 +148,7 @@
 												<p class="mb-0">사고율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
-												<div data-label="40%" class="doughnut mt-2 doughnut-success doughnut-20"></div>
+												<div data-label="40%" class="doughnut mt-2 doughnut-success doughnut-40"></div>
 											</div>
 										</div>
 									</div>
@@ -163,7 +163,7 @@
 												<p class="mb-0">손해율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
-												<div data-label="35%" class="doughnut mt-2 doughnut-warning doughnut-10"></div>
+												<div data-label="35%" class="doughnut mt-2 doughnut-warning doughnut-35"></div>
 											</div>
 										</div>
 									</div>
