@@ -75,8 +75,39 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
+									<div class="card-body">
+										<form class="form-inline">
+											<div class="form-group">
+												<label class="form-label mr-3" for="cntrctYy">연도</label>
+												<select class="custom-select mr-3" id="cntrctYy" name="cntrctYy">
+										          <option value="" selected>선택</option>
+										          <option value="2018">2018년</option>
+										          <option value="2017">2017년</option>
+										          <option value="2016">2016년</option>
+										        </select>
+										        <label class="form-label mr-3" for="sidocd">시도구분</label>
+												<select class="custom-select mr-3" id="sidocd" name="sidocd">
+										          <option value="" selected>전체</option>
+										          <option value="11000">서울</option>
+										          <%-- <c:forEach items="${sidoList }" var="city">
+										          	<option value="${city.CODE }">${city.LABLE }</option>
+										          </c:forEach> --%>
+										        </select>
+											</div>
+											<div class="ml-4">	
+												<button type="button" class="btn btn-info ml-2" id="btn-search">조회</button>
+												<!-- 1:차트(연령별) 2:차트(가입면적별) -->
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="card">
 									<div class="card-header">
-										<h5 class="card-title">가입자 현황 목록</h5>										
+										<h5 class="card-title float-left">가입자 현황 목록</h5>
+										<button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#modal-chart-area" id="btn-chart-area">가입면적별 차트보기</button>
+										<button type="button" class="btn btn-secondary btn-sm float-right mr-2" data-toggle="modal" data-target="#modal-chart-age"  id="btn-chart-age">연령별 차트보기</button>
 									</div>
 								<!-- 내용 -->
 									<table class="grid" id="jqGrid"></table>
@@ -87,6 +118,122 @@
 					</div>
 				</main>
 			</div>
+			
+			<!-- 연령별 차트 모달  -->
+			<div class="modal fade" id="modal-chart-age" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">연령별 차트</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            		<span aria-hidden="true">&times;</span>
+			          		</button>
+						</div>
+						<div class="modal-body" style="background-color: #f0f0f0">
+							<!-- 차트 선언 탭설정 -->
+							<div class="row">
+								<div class="col-12 col-lg-12">
+									<div class="tab">
+									<!-- 차트화면이 나타나서 디폴트로 파이차트가 나오고 차트변경버튼? 활용해서 막대나, 선으로도 변경가능하게 프로그램요망  -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item"><a class="nav-link active" href="#tab-age-1" data-toggle="tab" role="tab">파이형</a></li>
+											<li class="nav-item"><a class="nav-link" href="#tab-age-2" data-toggle="tab" role="tab">막대형</a></li>
+											<li class="nav-item"><a class="nav-link" href="#tab-age-3" data-toggle="tab" role="tab">그래프형</a></li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane active" id="tab-age-1" role="tabpanel">
+												<h4 class="tab-title">연령별 파이차트</h4>
+												<div class="card-body">
+													<div class="chart chart-lg">
+														<canvas id="chartjs-age-pie"></canvas>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab-age-2" role="tabpanel">
+												<h4 class="tab-title">연령별 막대차트</h4>
+												<div class="card-body">
+													<div class="chart">
+														<canvas id="chartjs-age-bar"></canvas>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab-age-3" role="tabpanel">
+												<h4 class="tab-title">연령별 그래프차트</h4>
+												<div class="card-body">
+													<div class="chart">
+														<canvas id="chartjs-age-line"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer" style="background-color: #f0f0f0">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- // 연령별 차트 모달  -->
+			
+			<!-- 가입면적별 차트 모달  -->
+			<div class="modal fade" id="modal-chart-area" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">가입면적별 차트</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            		<span aria-hidden="true">&times;</span>
+			          		</button>
+						</div>
+						<div class="modal-body" style="background-color: #f0f0f0">
+							<!-- 차트 선언 탭설정 -->
+							<div class="row">
+								<div class="col-12 col-lg-12">
+									<div class="tab">
+									<!-- 차트화면이 나타나서 디폴트로 파이차트가 나오고 차트변경버튼? 활용해서 막대나, 선으로도 변경가능하게 프로그램요망  -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item"><a class="nav-link active" href="#tab-area-1" data-toggle="tab" role="tab">파이형</a></li>
+											<li class="nav-item"><a class="nav-link" href="#tab-area-2" data-toggle="tab" role="tab">막대형</a></li>
+											<li class="nav-item"><a class="nav-link" href="#tab-area-3" data-toggle="tab" role="tab">그래프형</a></li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane active" id="tab-area-1" role="tabpanel">
+												<h4 class="tab-title">가입면적별 파이차트</h4>
+												<div class="card-body">
+													<div class="chart chart-lg">
+														<canvas id="chartjs-area-pie"></canvas>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab-area-2" role="tabpanel">
+												<h4 class="tab-title">가입면적별 막대차트</h4>
+												<div class="card-body">
+													<div class="chart">
+														<canvas id="chartjs-area-bar"></canvas>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="tab-area-3" role="tabpanel">
+												<h4 class="tab-title">가입면적별 그래프차트</h4>
+												<div class="card-body">
+													<div class="chart">
+														<canvas id="chartjs-area-line"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer" style="background-color: #f0f0f0">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- // 가입면적별 차트 모달  -->
 		</div>
 	</div>
 	
@@ -99,7 +246,7 @@
 	 <script src="/appstack-1-0-1/dist/js/tables.js"></script>
 	 
 	 <!-- jquery + ui -->
-	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
+	<!-- <script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script> forms.js와 충돌로 제외 처리 -->
 	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
 		
 	<!-- jqgried -->

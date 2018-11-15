@@ -16,8 +16,8 @@ public class JoinServiceImple implements JoinService {
 	private JoinMapper joinMapper;
 	@Override
 	public List<JoinStatusVo> getJoinStatusList(Map<String, Object> condition) {
-		List<JoinStatusVo> list = joinMapper.selectJoinStatusList(condition);
-		return joinMapper.selectJoinStatusList(condition);
+		//List<JoinStatusVo> list = joinMapper.selectJoinStatusList(condition);
+		return getTestData();
 	}
 	
 	private List<JoinStatusVo> getTestData() {
