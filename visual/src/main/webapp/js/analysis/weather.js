@@ -91,7 +91,7 @@ var weatherProc = {
 				],
 				datatype: "local",
 				height: 680,
-				rowNum: 500,
+				rowNum: 900,
 				shrinkToFit : false,
 				autowidth:true,
 				formatter : {

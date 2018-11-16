@@ -76,7 +76,7 @@
 			,crtid
 			,crtdt
 	   	) VALUES ( 
-		     #{ymd, jdbcType=VARCHAR}
+		     to_char(to_date(#{ymd, jdbcType=VARCHAR}, 'yyyy-mm-dd hh24:mi:ss'), 'yyyymmdd')
 			,#{areaId, jdbcType=VARCHAR}
 			,#{areaName, jdbcType=VARCHAR}
 			,#{paCropSpeId, jdbcType=VARCHAR}

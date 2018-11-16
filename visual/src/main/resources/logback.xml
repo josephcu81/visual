@@ -6,7 +6,7 @@
 	<!-- set rule for console log  -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>▶  ### VISUAL### [%-5level] %d{HH:mm:ss} [%logger{20}.%method:%line]- %msg%n</pattern>
+			<pattern>▶  ##VISUAL## [%-5level] %d{HH:mm:ss} [%logger{20}.%method:%line]- %msg%n</pattern>
 		</encoder>
 	</appender>
 	
@@ -14,7 +14,7 @@
 	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${LOGS_ABSOLUTE_PATH}/visual.log</file>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>▶  ### VISUAL### [%-5level] %d{HH:mm:ss} [%logger{20}.%method:%line]- %msg%n</pattern>
+			<pattern>▶  ##VISUAL## [%-5level] %d{HH:mm:ss} [%logger{20}.%method:%line]- %msg%n</pattern>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${LOGS_ABSOLUTE_PATH}/visual.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
@@ -28,12 +28,12 @@
 	<!-- log`s target and level  -->
 	<!-- ERROR > WARN > INFO(realese) > DEBUG(local) > TRACE -->	
     <logger name="org.springframework" additivity="false" >
-		<level value="DEBUG"/>
+		<level value="INFO"/>
 		<appender-ref ref="CONSOLE"/>
 	</logger>
 
     <root>
-		<level value="DEBUG" />
+		<level value="INFO" />
 		<appender-ref ref="CONSOLE" />
 	</root>
 

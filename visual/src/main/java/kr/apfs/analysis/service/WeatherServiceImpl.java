@@ -54,14 +54,16 @@ public class WeatherServiceImpl implements WeatherService {
 		//ResultVo result = new ResultVo(true, "API 요청을 완료 하였습니다.");
 		List<WeatherVo> result = null;
 		String serviceKey= "t%2FW%2BgR8MjLNnoqLoxLWpIrx%2BT9%2F%2FKBemixdk8wZxqBmz53x1ykp1dYhyotCSk4xj6Os3Ri7YZVKSAeEljAfksg%3D%3D";
-		
+		//String serviceKey= "1a7ea4ee-f376-49ba-a289-8d604065c7c5"; //at center api 인증키 가격정보
+		  
 		String stYmd = (String) condition.get("stYmd");
 		String edYmd = (String) condition.get("edYmd");
 		String areaID =  (String) condition.get("areaID");
 		String paCropSpeId = (String) condition.get("paCropSpeId");
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=800&serviceKey="+serviceKey);
+		//HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+serviceKey);
+		HttpGet httpGet = new HttpGet("http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD="+stYmd+"&ED_YMD="+edYmd+"&AREA_ID="+areaID+"&PA_CROP_SPE_ID="+paCropSpeId+"&pageNo=1&numOfRows=990&serviceKey="+serviceKey);
 		CloseableHttpResponse response1 = null;
 		try {
 			// api 호출 및 요청 결과 객체 변환
@@ -76,10 +78,10 @@ public class WeatherServiceImpl implements WeatherService {
 		    System.out.println(data);
 		    List<WeatherVo> weatherList = gson.fromJson(data, new TypeToken<List<WeatherVo>>(){}.getType());
 		    
-		    for(WeatherVo weatherInfo : weatherList) {
+		 /*   for(WeatherVo weatherInfo : weatherList) {
 		    	weatherMapper.insertWeatherInfo(weatherInfo);
 		    }
-		    
+		   */ 
 		    System.out.println(weatherList);
 		   /* Map<String, Object> weatherInfo = new HashMap<String, Object>();
 		    weatherInfo.put("list", weatherList);

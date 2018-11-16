@@ -204,7 +204,7 @@ public class WeatherVo {
 			this.wrnNm="폭염주의보";
 			break;
 		case "H3":
-			this.wrnNm="폭염주의보";
+			this.wrnNm="폭염경보";
 			break;
 		case "D2":
 			this.wrnNm="건조주의보";
