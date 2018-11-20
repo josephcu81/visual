@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.apfs.status.mapper.ItemMapper">
 	<select id="selectItemStatusList" resultType="kr.apfs.status.vo.ItemStatusVo">
+		/* kr.apfs.status.mapper.ItemMapper.selectItemStatusList */
 		SELECT
 		  cntyy,
 			sidocd,
@@ -24,7 +25,7 @@
 			round(sggrfa/1000000) sggrfa,
 			round(fmrfa/1000000) fmrfa,
 			round(rfprm/1000000) rfprm,
-			rffmcnt,
+			rffmprm rffmcnt,  /*rffmcntㅇㅔㅅㅓ  rffmpmrㄹㅗ ㅂㅕㄴㄱㅕㅇ*/
 			round(riskprm/1000000) riskprm,
 			round(grsprm/1000000) grsprm,
 			prmrt,

@@ -31,8 +31,8 @@ public class PriceDayController {
 	@RequestMapping("/index")
 	public String index(ModelMap map) {
 		
-		//map.addAttribute("itemCategoryCode", commonService.getItemCategoryList());
-		//map.addAttribute("itemCategoryCode", commonService.getContryCodeList());
+		map.addAttribute("itemCategoryCode", commonService.getItemCategoryList());
+		map.addAttribute("contryCode", commonService.getContryCodeList());
 		
 		return "/analysis/price-day";
 	}

@@ -145,7 +145,7 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h6>24,429건/242,578건</h6>
+												<h6>24,429건<br/>/242,578건</h6>
 												<p class="mb-0">사고율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">
@@ -160,7 +160,7 @@
 									<div class="card-body py-2">
 										<div class="row">
 											<div class="col-12 col-md-6 align-self-center text-center text-md-left">
-												<h6>위험보험료:328,005백만원</h6>
+												<h6>위험보험료:<br/>328,005백만원</h6>
 												<p class="mb-0">손해율</p>
 											</div>
 											<div class="col-12 col-md-6 align-self-center text-center text-md-right">

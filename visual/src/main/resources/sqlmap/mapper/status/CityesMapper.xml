@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.apfs.status.mapper.CityesMapper">
 	<select id="selectCityesStatusList" resultType="kr.apfs.status.vo.CityesStatusVo">
-		SELECT
+		/* kr.apfs.status.mapper.CityesMapper.selectCityesStatusList : */
+	    SELECT
 		  cntyy,
 			sidocd,
 			sidonm,
@@ -24,7 +25,7 @@
 			round(sggrfa/1000000) sggrfa,
 			round(fmrfa/1000000) fmrfa,
 			round(rfprm/1000000) rfprm,
-			rffmcnt,
+			round(rffmprm/1000000) rffmprm,
 			round(riskprm/1000000) riskprm,
 			round(grsprm/1000000) grsprm,
 			prmrt,
@@ -38,5 +39,6 @@
 			losrt
 		FROM status1
 		WHERE 1=1
+		order by sidocd
 	</select>
 </mapper>

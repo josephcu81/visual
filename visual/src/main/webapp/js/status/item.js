@@ -153,5 +153,5 @@ var indexProc = {
 }
 
 $(window).resize(function() {	
-	$(".grid").setGridWidth($('main').width());
+	$(".grid").setGridWidth($('main').width()-$('.simplebar-content').width());
 });

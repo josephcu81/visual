@@ -25,13 +25,13 @@ $(document).ready(function() {
 				,{ name: 'sidoprm', index:'sidoprm', width:95,  align: 'right',formatter:'integer' }
 				,{ name: 'sggprm', index:'sggprm', width:95,  align: 'right',formatter:'integer' }
 				,{ name: 'fmprm', index:'fmprm', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'rfas', index:'rfas', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'govrfa', index:'govrfa', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'sidorfa', index:'sidorfa', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'sggrfa', index:'sggrfa', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'fmrfa', index:'fmrfa', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rfas', index:'rfas', width:90,  align: 'right',formatter:'integer' }
+				,{ name: 'govrfa', index:'govrfa', width:90,  align: 'right',formatter:'integer' }
+				,{ name: 'sidorfa', index:'sidorfa', width:90,  align: 'right',formatter:'integer' }
+				,{ name: 'sggrfa', index:'sggrfa', width:90,  align: 'right',formatter:'integer' }
+				,{ name: 'fmrfa', index:'fmrfa', width:90,  align: 'right',formatter:'integer' }
 				,{ name: 'rfprm', index:'rfprm', width:95,  align: 'right',formatter:'integer' }
-				,{ name: 'rffmacnt', index:'rffmacnt', width:95,  align: 'right',formatter:'integer' }
+				,{ name: 'rffmprm', index:'rffmprm', width:95,  align: 'right',formatter:'integer' }
 				,{ name: 'riskprm', index:'riskInsrf', width:95,  align: 'right',formatter:'integer' }
 				,{ name: 'grsprm', index:'grsprm', width:95,  align: 'right',formatter:'integer' }
 				,{ name: 'prmrt', index:'prmrt', width:95,  align: 'right',formatter:'integer' }
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 
 				],
-				height: 400,
+				height: 660,
 				rowNum: 30,
 				shrinkToFit : false,
 				autowidth:true

@@ -87,10 +87,10 @@ var joinProc = {
 		$('#btn-chart-age').on('click', function(){
 			// 파이차트 초기화
 			var pieData = { 
-				labels: ["Social", "Search Engines", "Direct", "Other"],
+				labels: ["30대 이하", "40~49", "50~59", "60~69", "60~69", "70대 이상"],
 				datasets: [{
-					data: [890, 300, 54, 721],
-					backgroundColor: ["#0cc2aa", "#fcc100", "#f44455", "#E8EAED"],
+					data: [3052, 1250, 37692, 59598, 57932],
+					backgroundColor: ["#0cc2aa", "#fcc100", "#f44455", "#E8EAED", "#007bff"],
 					borderColor: "transparent"
 				}]
 			}; 
@@ -289,5 +289,5 @@ var joinProc = {
 }
 
 $(window).resize(function() {	
-	$(".grid").setGridWidth($('main').width());
+	$(".grid").setGridWidth($('main').width()-$('.sidebar').width());
 });

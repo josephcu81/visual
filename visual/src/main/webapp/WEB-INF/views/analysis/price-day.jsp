@@ -48,6 +48,7 @@
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item active"><a class="sidebar-link" href="/analysis/price-day/index">농작물가격정보(AT센터)</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">목적물별사고발생_기상재해현황</a></li>
               				</ul>
 						</li>
 						<li class="sidebar-item">
@@ -90,26 +91,26 @@
 												<label class="form-label mr-3" for="itemCategoryCode">부류별</label>
 												<!-- 100:식량작물, 200:채소류, 300:특용작물, 400:과일류, 500:축산물, 600:수산물 -->
 												<select class="custom-select mr-3" id="itemCategoryCode" name="itemCategoryCode">
-										          <option value="100" selected>식량작물</option>
+										          <!-- <option value="100" selected>식량작물</option>
 										          <option value="200">채소류</option>
 										          <option value="300">특용작물</option>
 										          <option value="400">과일류</option>
 										          <option value="500">축산물</option>
-										          <option value="600">수산물</option>
-										          <%-- <c:forEach items="${itemCategoryCode }" var="category">
+										          <option value="600">수산물</option> -->
+										          <c:forEach items="${itemCategoryCode }" var="category">
 										          	<option value="${category.CODE }">${category.NAME }</option>
-										          </c:forEach> --%>
+										          </c:forEach>
 										        </select>
 										        
 										        <label class="form-label mr-3" for="contryCode">지역구분</label>
 												<!-- 100:식량작물, 200:채소류, 300:특용작물, 400:과일류, 500:축산물, 600:수산물 -->
 												<select class="custom-select mr-3" id="contryCode" name="contryCode">
-										          <option value="" selected>전체</option>
+										         <!--  <option value="" selected>전체</option>
 										          <option value="1101" class="02">서울</option>
-										          <option value="2300" class="01">인천</option>
-										     <%-- <c:forEach items="${contryCode}" var="contry">
+										          <option value="2300" class="01">인천</option> -->
+										     	 	<c:forEach items="${contryCode}" var="contry">
 										          	<option value="${contry.CODE}" class="${not empty contry.TYPE ? '01' : '02'}" >${contry.NAME }</option>
-										          </c:forEach> --%>
+										        	</c:forEach> 
 										        </select>
 										        <!-- 소매가격 선택가능 지역 (1101:서울, 2100:부산, 2200:대구, 2300:인천, 2401:광주, 2501:대전, 2601:울산, 3111:수원, 3211:춘천, 3311:청주, 3511:전주, 3711:포항, 3911:제주, 3113:의정부, 3613:순천, 3714:안동, 3814:창원, 3145:용인)
 													  도매가격 선택가능 지역 (1101:서울, 2100:부산, 2200:대구,           2401:광주, 2501:대전)

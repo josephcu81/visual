@@ -17,7 +17,6 @@ public class AcdntServiceImpl implements AcdntService {
 
 	@Override
 	public List<AcdntVo> getAcdntAnalList(Map<String, Object> condition) {
-		// TODO Auto-generated method stub
 		return acdntMapper.selectAcdntAnalList(condition);
 	}
 

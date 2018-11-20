@@ -10,7 +10,7 @@ public class CityesStatusVo {
 	private long objcnt; //  - 과수원(농지)수;
 	private long sbam; //  - 금액;
 	private long sbar; //  - 면적;
-	private float asbbrt; //  - 면적가입률;
+	private float asbrt; //  - 면적가입률;
 	private long prms; //  - 보험료;
 	private long govprm; // 보험료 - 국가;
 	private long sidoprm; // 보험료 - 시도;
@@ -22,7 +22,7 @@ public class CityesStatusVo {
 	private long sggrfa; // 환급금 - 시군구;
 	private long cnbnrfa; // 환급금 - 농가;
 	private long rfprm; //  - 환급금차감후 보혐료;
-	private long rffmcnt; // 환급금차감후 보혐료 - 농가;
+	private long rffmprm; // 환급금차감후 보혐료 - 농가;
 	private long riskprm; //  - 위험 보험료;
 	private long grsprm; //  - 영업 보험료;
 	private float prmrt; //  - 보험요율;
@@ -88,11 +88,11 @@ public class CityesStatusVo {
 	public void setSbar(long sbar) {
 		this.sbar = sbar;
 	}
-	public float getAsbbrt() {
-		return asbbrt;
+	public float getasbrt() {
+		return asbrt;
 	}
-	public void setAsbbrt(float asbbrt) {
-		this.asbbrt = asbbrt;
+	public void setasbrt(float asbrt) {
+		this.asbrt = asbrt;
 	}
 	public long getPrms() {
 		return prms;
@@ -160,11 +160,11 @@ public class CityesStatusVo {
 	public void setRfprm(long rfprm) {
 		this.rfprm = rfprm;
 	}
-	public long getRffmcnt() {
-		return rffmcnt;
+	public long getrffmprm() {
+		return rffmprm;
 	}
-	public void setRffmcnt(long rffmcnt) {
-		this.rffmcnt = rffmcnt;
+	public void setrffmprm(long rffmprm) {
+		this.rffmprm = rffmprm;
 	}
 	public long getRiskprm() {
 		return riskprm;
@@ -236,9 +236,9 @@ public class CityesStatusVo {
 	public String toString() {
 		return "CityesStatusVo [cntty=" + cntty + ", sidocd=" + sidocd + ", sidonm=" + sidonm + ", tagar=" + tagar
 				+ ", sbfmcnt=" + sbfmcnt + ", pcycnt=" + pcycnt + ", objcnt=" + objcnt + ", sbam=" + sbam + ", sbar="
-				+ sbar + ", asbbrt=" + asbbrt + ", prms=" + prms + ", govprm=" + govprm + ", sidoprm=" + sidoprm
+				+ sbar + ", asbrt=" + asbrt + ", prms=" + prms + ", govprm=" + govprm + ", sidoprm=" + sidoprm
 				+ ", sggprm=" + sggprm + ", fmprm=" + fmprm + ", rfas=" + rfas + ", govrfa=" + govrfa + ", sidorfa="
-				+ sidorfa + ", sggrfa=" + sggrfa + ", cnbnrfa=" + cnbnrfa + ", rfprm=" + rfprm + ", rffmcnt=" + rffmcnt
+				+ sidorfa + ", sggrfa=" + sggrfa + ", cnbnrfa=" + cnbnrfa + ", rfprm=" + rfprm + ", rffmprm=" + rffmprm
 				+ ", riskprm=" + riskprm + ", grsprm=" + grsprm + ", prmrt=" + prmrt + ", rfcnt=" + rfcnt + ", rfrt="
 				+ rfrt + ", prmpp=" + prmpp + ", acdcnt=" + acdcnt + ", idm=" + idm + ", idmpa=" + idmpa + ", acdrt="
 				+ acdrt + ", losrt=" + losrt + "]";

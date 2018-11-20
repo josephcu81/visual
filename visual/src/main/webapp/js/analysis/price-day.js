@@ -79,7 +79,7 @@ var priceDayProc = {
 					,{ name: 'day7', index:'day7', width:70,  align: 'left',}
 					,{ name: 'dpr7', index:'dpr7', width:70,  align: 'right',}
 					],
-				height: 370,
+				height: 570,
 				rowNum: 999,
 				shrinkToFit : false,
 				autowidth:true,
