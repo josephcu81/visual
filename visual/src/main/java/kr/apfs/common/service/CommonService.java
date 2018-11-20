@@ -19,4 +19,15 @@ public interface CommonService {
 	
 	public List<Map<String, Object>> getCropIdList();
 	public List<Map<String, Object>> getFppCdList();
+	/**
+	 * 농산물 가격정보 > 부류코드
+	 * @return
+	 */
+	public List<Map<String, Object>> getItemCategoryList();
+	
+	/**
+	 * 농산물 가격정보 > 지역코드
+	 * @return
+	 */
+	public List<Map<String, Object>>  getContryCodeList();
 }

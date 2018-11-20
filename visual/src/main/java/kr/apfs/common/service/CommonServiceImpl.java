@@ -33,8 +33,17 @@ public class CommonServiceImpl implements CommonService {
 
 	@Override
 	public List<Map<String, Object>> getFppCdList() {
-		// TODO Auto-generated method stub
 		return commonMapper.selectFppCode();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getItemCategoryList() {
+		return commonMapper.selectItemCategoryCode();
+	}
+
+	@Override
+	public List<Map<String, Object>> getContryCodeList() {
+		return commonMapper.selectContryCode();
 	}
 	
 

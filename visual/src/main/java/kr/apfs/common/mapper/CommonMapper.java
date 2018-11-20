@@ -28,5 +28,16 @@ public interface CommonMapper {
 	 * @return
 	 */
 	List<Map<String, Object>> selectFppCode();
+	
+	/**
+	 * 농산물 가격정보 부류 코드 조회
+	 * @return
+	 */
+	List<Map<String, Object>> selectItemCategoryCode();
+	/**
+	 * 농산물 가격정보 지역코드조회
+	 * @return
+	 */
+	List<Map<String, Object>> selectContryCode();
 
 }

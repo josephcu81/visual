@@ -30,4 +30,21 @@
 	    FROM comm_cd
 	    WHERE grp_cd = '100'
 	</select>
+	
+	<select id="selectItemCategoryCode" resultType="java.util.Map">
+		SELECT 
+	        cd AS code
+	        ,cd_nm AS name
+	    FROM comm_cd
+	    WHERE grp_cd = '500'
+	</select>
+	
+	<select id="selectContryCode" resultType="java.util.Map">
+		SELECT 
+	        cd AS code
+	        ,cd_nm AS name
+	        ,etc1 AS type
+	    FROM comm_cd
+	    WHERE grp_cd = '510'
+	</select>
 </mapper>
