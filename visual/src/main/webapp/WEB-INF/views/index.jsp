@@ -12,40 +12,7 @@
   <title>메인 페이지 > 농업정책보험금융원</title>
   
 	<link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
-	<script src="/appstack-1-0-1/dist/js/app.js"></script>
-
-  <!-- jquery + ui -->
-	<script type="text/ecmascript" src="/plugins/jquery-3.3.1.min.js"></script>
-	<script type="text/ecmascript" src="/plugins/jquery-ui.min.js"></script>
-  <!-- Optional JS modules -->
-  <script src="/appstack-1-0-1/dist/js/charts.js"></script>
-  <script src="/appstack-1-0-1/dist/js/forms.js"></script>
-  <script src="/appstack-1-0-1/dist/js/maps.js"></script>
-  <script src="/appstack-1-0-1/dist/js/tables.js"></script>
-  
 		
-	<!-- jqgried -->
-	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/i18n/grid.locale-en.js"></script>
-	<script type="text/ecmascript" src="/plugins/jqgrid-5.3.1/js/jquery.jqGrid.min.js"></script>
-	
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="/plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/plugins/jqgrid-5.3.1/css/ui.jqgrid-bootstrap4.css" />
-    
-	<script>
-		$.jgrid.defaults.width = 780;
-		$.jgrid.defaults.responsive = true;
-		$.jgrid.defaults.styleUI = 'Bootstrap4';
-		$.jgrid.defaults.iconSet = "Octicons";
-	</script>
-	
-	<!-- bootstrap 4.1.3 -->
- 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
-  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-	
-	<script src="/js/utils/jqgrid-cmpnt.js"></script>
-	
 </head>
 <body>
 	<div class="wraaper">
@@ -90,6 +57,12 @@
 							<a class="sidebar-link" href="/performance/index">
                 				<i class="align-middle" data-feather="book-open"></i> 
                 				<span class="align-middle">성과지표</span>
+              				</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="/sample/menu">
+                				<i class="align-middle" data-feather="bar-chart-2"></i> 
+                				<span class="align-middle">메뉴 구성도</span>
               				</a>
 						</li>
 					</ul>
@@ -289,7 +262,13 @@
 			</div>
 		</div>
 	</div>
+<script src="/appstack-1-0-1/dist/js/app.js"></script>
 
+  <!-- Optional JS modules -->
+  <script src="/appstack-1-0-1/dist/js/charts.js"></script>
+  <script src="/appstack-1-0-1/dist/js/forms.js"></script>
+  <script src="/appstack-1-0-1/dist/js/maps.js"></script>
+  <script src="/appstack-1-0-1/dist/js/tables.js"></script>
   <script src="/js/main/dash.js"></script>
 </body>
 </html>

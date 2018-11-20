@@ -59,6 +59,12 @@
                 				<span class="align-middle">성과지표</span>
               				</a>
 						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="/sample/menu">
+                				<i class="align-middle" data-feather="bar-chart-2"></i> 
+                				<span class="align-middle">메뉴 구성도</span>
+              				</a>
+						</li>
 					</ul>
 				</div>
 			</nav> <!-- // Left -->
