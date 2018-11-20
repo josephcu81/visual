@@ -30,6 +30,12 @@ public class CommonServiceImpl implements CommonService {
 		
 		return commonMapper.selectKmaCropCode();
 	}
+
+	@Override
+	public List<Map<String, Object>> getFppCdList() {
+		// TODO Auto-generated method stub
+		return commonMapper.selectFppCode();
+	}
 	
 
 }

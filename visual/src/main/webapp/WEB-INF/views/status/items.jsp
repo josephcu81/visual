@@ -50,6 +50,7 @@
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">정책보험재가입자 비율</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">주산지지역의날씨정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price/index">농작물가격정보(AT센터)</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">목적물별사고발생_기상재해현황</a></li>
               				</ul>
 						</li>
 						<li class="sidebar-item">
@@ -124,6 +125,6 @@
 	
 	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 
-  	<script src="/js/status/join-and-acident.js"></script>
+  	<script src="/js/status/item.js"></script>
 </body>
 </html>

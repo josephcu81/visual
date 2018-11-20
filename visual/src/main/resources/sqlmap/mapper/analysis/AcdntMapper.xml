@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.apfs.analysis.mapper.AcdntMapper">
+	<select id="selectAcdntAnalList" resultType="kr.apfs.analysis.vo.AcdntVo">
+		SELECT
+		   sidoetc, 
+		   acdno, objno, acdbdt, acdcacd,
+		   frcs,  fppcd, fppnm,
+		   sidocd, sidonm,
+		   paymgar, payidm, ymd,
+		   areaid, areanm,
+		   wrnnm, daymaxta, dayminta,daysumrn,dayavgws,daysumss
+		FROM 
+		   ACDWR
+		WHERE 1=1        
+		AND acdbdt BETWEEN #{stYmd} AND #{edYmd}
+		<if test='sidocd != null and sidocd != ""' >
+		 AND sidocd = #{sidocd}
+		</if>
+		<if test='fppcd != null and fppcd != ""' >
+		 AND fppcd = #{fppcd}
+        </if>
+		 ORDER BY acdbdt
+	</select>
+</mapper>

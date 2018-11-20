@@ -23,4 +23,11 @@
 	        ,cropnm AS name
 	    FROM kma_crop order by cropid
 	</select>
+	<select id="selectFppCode" resultType="java.util.Map">
+		SELECT 
+	        cd AS code
+	        ,etc1 AS name	     
+	    FROM comm_cd
+	    WHERE grp_cd = '100'
+	</select>
 </mapper>

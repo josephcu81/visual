@@ -80,8 +80,8 @@ public class WeatherServiceImpl implements WeatherService {
 		    
 		 /*   for(WeatherVo weatherInfo : weatherList) {
 		    	weatherMapper.insertWeatherInfo(weatherInfo);
-		    }
-		   */ 
+		    }*/
+		    
 		    System.out.println(weatherList);
 		   /* Map<String, Object> weatherInfo = new HashMap<String, Object>();
 		    weatherInfo.put("list", weatherList);

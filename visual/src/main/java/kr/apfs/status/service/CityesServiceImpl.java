@@ -16,7 +16,7 @@ public class CityesServiceImpl implements CityesService {
 	private CityesMapper cityesMapper;
 	@Override
 		public List<CityesStatusVo>  getCityesStatusList(Map<String, Object> condition) {
-			List<CityesStatusVo> list = cityesMapper.selectCityesStatusList(condition);
+			//List<CityesStatusVo> list = cityesMapper.selectCityesStatusList(condition);
 			return cityesMapper.selectCityesStatusList(condition);
 		}
 

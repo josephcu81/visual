@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.apfs.status.mapper.ItemMapper">
+	<select id="selectItemStatusList" resultType="kr.apfs.status.vo.ItemStatusVo">
+		SELECT
+		  cntyy,
+			sidocd,
+			sidonm,
+			tagar,
+			sbfmcnt,
+			pcycnt,
+			objcnt,
+			round(sbam/1000000,0) sbam,
+			sbar,
+			asbrt,
+			round(prms/1000000,0) prms,
+			round(govprm/1000000,0) govprm,
+			round(sidoprm/1000000,0) sidoprm,
+			round(sggprm/1000000) sggprm,
+			round(fmprm/1000000) fmprm,
+			round(rfas/1000000) rfas,
+			round(govrfa/1000000) govrfa,
+			round(sidorfa/1000000) sidorfa,
+			round(sggrfa/1000000) sggrfa,
+			round(fmrfa/1000000) fmrfa,
+			round(rfprm/1000000) rfprm,
+			rffmcnt,
+			round(riskprm/1000000) riskprm,
+			round(grsprm/1000000) grsprm,
+			prmrt,
+			rfcnt,
+			rfrt,
+			round(prmpp/1000) prmpp,
+			acdcnt,
+			round(idm/1000000) idm,
+			idmpa,
+			acdrt,
+			losrt
+		FROM status1
+		WHERE 1=1
+	</select>
+</mapper>

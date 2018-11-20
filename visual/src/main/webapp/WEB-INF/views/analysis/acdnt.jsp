@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- <c:import url="http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?serviceKey=t%2FW%2BgR8MjLNnoqLoxLWpIrx%2BT9%2F%2FKBemixdk8wZxqBmz53x1ykp1dYhyotCSk4xj6Os3Ri7YZVKSAeEljAfksg%3D%3D" /> --%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -10,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>주산지지역의날씨정보 > 농업정책보험금융원</title>
+  <title>목적물별사고발생_기상재해현황 > 농업정책보험금융원</title>
   
   <link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
 </head>
@@ -73,28 +72,28 @@
 				<!-- Content -->
 				<main class="content">
 					<div class="container-fluid p-0">
-						<h1 class="h3 mb-3">농주산지 기상정보(기상청 API연계)</h1>	
+						<h1 class="h3 mb-3">목적물별사고발생_기상재해현황</h1>	
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-body">
 										<form class="form-inline">
 											<div class="form-group">
-												<label class="form-label mr-5"  for="daterange">통계조회일자</label>
+												<label class="form-label mr-5"  for="daterange">사고발생일자</label>
 												<input class="form-control mr-5" type="text" id="daterange" name="daterange" style="width: 213px;" />
 												
-												<label class="form-label mr-3" for="areaid">주산지</label>
-												<select class="custom-select mr-3" id="areaid" name="areaid">
-										          <option value="999999999" selected>전체</option>
-										          <c:forEach items="${areaList }" var="area">
-										          	<option value="${area.CODE }">${area.NAME }</option>
+												<label class="form-label mr-3" for="sidocd">시도명</label>
+												<select class="custom-select mr-3" id="sidocd" name="sidocd">
+										          <option  value=""  selected>전체</option>
+										          <c:forEach items="${sidoList }" var="sido">
+										          	<option value="${sido.CODE }">${sido.NAME }</option>
 										          </c:forEach>
 										        </select>
-										        <label class="form-label mr-3" for="cropid">작물명(특성)</label>
-												<select class="custom-select mr-3" id="cropid" name="cropid">
-										          <option value="PA999999" selected>전체작물</option>
-										          <c:forEach items="${cropList }" var="crop">
-										          	<option value="${crop.CODE }">${crop.NAME }</option>
+										        <label class="form-label mr-3" for="fppcd">품목명</label>
+												<select class="custom-select mr-3" id="fppcd" name="fppcd">
+										          <option  value="" selected>전체품목</option>
+										          <c:forEach items="${fppList }" var="fpp">
+										          	<option value="${fpp.CODE }">${fpp.NAME }</option>
 										          </c:forEach>
 										        </select>
 											</div>
@@ -161,7 +160,7 @@
 	<!-- grid utils -->
 	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 	<!-- -->
-  	<script src="/js/analysis/weather.js"></script>
+  	<script src="/js/analysis/acdnt.js"></script>
   	
 </body>
 </html>
