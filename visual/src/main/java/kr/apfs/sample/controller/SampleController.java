@@ -40,4 +40,9 @@ public class SampleController
   public String data() {
 	  return sampleService.getData();
   }
+  
+  @RequestMapping({"/menu"})
+  public String menu() {
+	  return "sample/menu";
+  }
 }

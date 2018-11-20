@@ -23,5 +23,10 @@ public interface CommonMapper {
 	 * @return
 	 */
 	List<Map<String, Object>> selectKmaCropCode();
+	/**
+	 * 작물조회_농금원
+	 * @return
+	 */
+	List<Map<String, Object>> selectFppCode();
 
 }
