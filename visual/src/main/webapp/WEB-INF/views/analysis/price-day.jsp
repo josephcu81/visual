@@ -45,18 +45,19 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<!-- <li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li> -->
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
-              					<li class="sidebar-item active"><a class="sidebar-link" href="/analysis/price-day/index">농작물가격정보(AT센터)</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">목적물별사고발생_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price-day/index">농작물가격정보(AT센터)</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">사고조사현황_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acpay/index">지역별상품별_보상지급현황</a></li>
               				</ul>
 						</li>
-						<li class="sidebar-item">
+						<!-- <li class="sidebar-item">
 							<a class="sidebar-link" href="/performance/index">
                 				<i class="align-middle" data-feather="book-open"></i> 
                 				<span class="align-middle">성과지표</span>
               				</a>
-						</li>
+						</li> -->
 						<li class="sidebar-item">
 							<a class="sidebar-link" href="/sample/menu">
                 				<i class="align-middle" data-feather="bar-chart-2"></i> 
@@ -77,7 +78,7 @@
 				<!-- Content -->
 				<main class="content">
 					<div class="container-fluid p-0">
-						<h1 class="h3 mb-3">농작물가격정보(농산물유통정보 API연계)</h1>	
+						<h1 class="h3 mb-3">농산물가격정보(aT_KAMIS API연계)<img alt="kamis" src="/images/main/kamis.JPG" height="50" ></h1>	
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
@@ -87,7 +88,7 @@
 												<label class="form-label mr-5"  for="regday">조회일자</label>
 												<input class="form-control mr-5" type="text" id="regday" name="regday" style="width: 213px;" />
 												
-												<label class="form-label mr-3" for="productClsCode">부류별</label>
+												<label class="form-label mr-3" for="productClsCode">도소매</label>
 												<!--  01:소매, 02:도매 -->
 												<select class="custom-select mr-3" id="productClsCode" name="productClsCode">
 										          <option value="01" selected>소매</option>

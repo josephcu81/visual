@@ -123,26 +123,15 @@ var weatherProc = {
 			   areaID : $('select[name="areaid"]').val(),
 			   paCropSpeId : $('select[name="cropid"]').val()
           }}).trigger("reloadGrid");
-			/*$.ajax({
-				  method: "GET",
-				  url: url,
-				  contentType: 'application/json; charset=utf-8',
-				  dataType: "json",
-				  data : {
-					  stYmd : dateArr[0].trim(),
-					  edYmd : dateArr[1].trim(),
-					  areaID : $('select[name="areaid"]').val(),
-					  paCropSpeId : "PA999999"//전체 작물
-				  },
-				  cache: false
-				}).done(function( data ) {
-					  var itemArr = data.response.body.items;
-					  $(itemArr).each(function(idx, item){
-						  
-					  });
-					  $("#jqGrid").trigger("reloadGrid");
-					  console.log( data ); // 2pm
-				  });*/
+		});
+		$('#btn-excel').on('click', function(){
+			$("#jqGrid").jqGrid("exportToExcel",{
+				includeLabels : true,
+				includeGroupHeader : true,
+				includeFooter: true,
+				fileName : "농주산지기상정보.xlsx",
+				maxlength : 40 // maxlength for visible string data 
+			})
 		});
 		//http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD=20161201&ED_YMD=20161231&AREA_ID=999999999&PA_CROP_SPE_ID=PA999999&serviceKey="+tokenKey
 	}

@@ -61,9 +61,9 @@ var priceDayProc = {
 				colModel: [
 					 { name: 'contry_name', index:'contry_name', width:90, align: 'center', formatter: priceDayProc.setContryName}
 					,{ name: 'cat_name', index:'cat_name', width:90,  align: 'left', formatter: priceDayProc.setItemCategoryName}
-					,{ name: 'item_name', index:'item_name', width:90,  align: 'left' }
+					,{ name: 'item_name', index:'item_name', width:90,  align: 'center' }
 					,{ name: 'kind_name', index:'kind_name', width:150,  align: 'left'}
-					,{ name: 'rank', index:'rank', width:90,  align: 'left'}
+					,{ name: 'rank', index:'rank', width:90,  align: 'center'}
 					,{ name: 'day1', index:'day1', width:120,  align: 'left',}
 					,{ name: 'dpr1', index:'dpr1', width:70,  align: 'right',}
 					,{ name: 'day2', index:'day2', width:130,  align: 'left',}
@@ -79,7 +79,7 @@ var priceDayProc = {
 					,{ name: 'day7', index:'day7', width:70,  align: 'left',}
 					,{ name: 'dpr7', index:'dpr7', width:70,  align: 'right',}
 					],
-				height: 570,
+				height: 580,
 				rowNum: 999,
 				shrinkToFit : false,
 				autowidth:true,
@@ -145,7 +145,7 @@ var priceDayProc = {
 		}
 	}
 	,setContryName : function() {
-		return $('#productClsCode option:selected').text();
+		return $('#contryCode option:selected').text();
 	}
 	,setItemCategoryName : function() {
 		return $('#itemCategoryCode option:selected').text();

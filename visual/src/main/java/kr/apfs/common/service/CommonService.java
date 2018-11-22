@@ -19,6 +19,8 @@ public interface CommonService {
 	
 	public List<Map<String, Object>> getCropIdList();
 	public List<Map<String, Object>> getFppCdList();
+	public List<Map<String, Object>> getMclsList();
+	public List<Map<String, Object>> getSclsList();
 	/**
 	 * 농산물 가격정보 > 부류코드
 	 * @return

@@ -11,7 +11,15 @@
 
   <title>시도별 가입 및 사고 현황 > 농업정책보험금융원</title>
   
-	<link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
+  <link href="/appstack-1-0-1/dist/css/app.css" rel="stylesheet">
+  <style>
+    table {
+        font-size:13px !important; 
+    }
+    table td {
+    	padding:5px !important;
+    }
+ </style>
 	
 </head>
 <body>
@@ -47,18 +55,19 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지기상재해정보</a></li>
+              					<!-- <li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li> -->
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price-day/index">농작물가격정보(AT센터)</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">목적물별사고발생_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">사고조사현황_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acpay/index">지역별상품별_보상지급현황</a></li>
               				</ul>
 						</li>
-						<li class="sidebar-item">
+					<!-- 	<li class="sidebar-item">
 							<a class="sidebar-link" href="/performance/index">
                 				<i class="align-middle" data-feather="book-open"></i> 
                 				<span class="align-middle">성과지표</span>
               				</a>
-						</li>
+						</li> -->
 						<li class="sidebar-item">
 							<a class="sidebar-link" href="/sample/menu">
                 				<i class="align-middle" data-feather="bar-chart-2"></i> 
@@ -81,6 +90,37 @@
 					<div class="container-fluid p-0">
 						<h1 class="h3 mb-3">시도별 가입 및 사고현황</h1>	
 						<div class="row">
+							<!-- 검색조건 영역 -->
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body">
+										<form class="form-inline">
+											<div class="form-group">
+												<label class="form-label mr-3" for="cntrctYy">연도</label>
+												<select class="custom-select mr-3" id="cntyy" name="cntyy">
+										          <option value="" selected>선택</option>
+										          <option value="2018">2018년</option>
+										          <option value="2017" selected>2017년</option>
+										          <option value="2016">2016년</option>
+										        </select>
+										        <label class="form-label mr-3" for="sidocd">시도구분</label>
+												<select class="custom-select mr-3" id="sidocd" name="sidocd">
+										          <option value="" selected>전체</option>
+										          <!-- <option value="11000">서울</option> -->
+										          <c:forEach items="${sidoList }" var="city">
+										          	<option value="${city.CODE }">${city.LABLE }</option>
+										          </c:forEach>
+										        </select>
+											</div>
+											<div class="ml-4">	
+												<button type="button" class="btn btn-primary ml-2" id="btn-search">조회</button>
+												<button type="button" class="btn btn-success ml-2" id="btn-excel">엑셀다운로드</button>
+												<!-- <button type="button" class="btn btn-primary ml-2" id="btn-save">저장</button> 서버에서 저장 처리할 예쩡-->
+											</div>
+										</form>
+									</div>
+								</div>
+							</div><!-- //검색조건 영역 -->
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
@@ -128,9 +168,11 @@
 	<!-- bootstrap 4.1.3 -->
 	<script src="/plugins/popper.js/1.14.3/umd/popper.min.js"></script>
  	<script src="/plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+ 	
+	<script type="text/javascript" language="javascript" src="/plugins/jqgrid-5.3.1/js/jszip.min.js"></script>
 	
 	<script src="/js/utils/jqgrid-cmpnt.js"></script>
 
-  <script src="/js/status/join-and-acident.js"></script>
+  	<script src="/js/status/cityes.js"></script>
 </body>
 </html>

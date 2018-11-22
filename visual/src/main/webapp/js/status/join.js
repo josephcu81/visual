@@ -7,6 +7,7 @@ $(document).ready(function() {
 	
 });
 
+var piChart, barChart, lineChart;
 var joinProc = {
 	init : function() {
 		joinProc.initGrid();
@@ -17,8 +18,8 @@ var joinProc = {
 		var option = {
 				url: './list',
 				colNames: [
-					'구분', '남자', '여자','30대이하','40~49','50~59','60~69','70대이상','개인','법인',
-					'2K미만','2K~4K','4K~6K','6K~8K','8K~10K','10K~15K','15K이상','내국인','외국인'
+					'구분', '남자', '여자','30대이하','40~49','50~59','60~69','70대이상','개인','법인','내국인','외국인',
+					'2K미만','2K~4K','4K~6K','6K~8K','8K~10K','10K~15K','15K이상'
 				],
 				colModel: [
 					{ name: 'sidonm', index:'sido', width:90, align: 'center' }
@@ -31,6 +32,8 @@ var joinProc = {
 					,{ name: 'ag70', index:'ag70', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'gicnt', index:'gicnt', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'bicnt', index:'bicnt', width:90,  align: 'right',formatter:'integer' }
+					,{ name: 'kor', index:'kor', width:90,  align: 'right',formatter:'integer' }
+					,{ name: 'frn', index:'frn', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'ar2m', index:'ar2m', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'ar24', index:'ar24', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'ar46', index:'ar46', width:90,  align: 'right',formatter:'integer' }
@@ -38,8 +41,7 @@ var joinProc = {
 					,{ name: 'ar810', index:'ar810', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'ar1015', index:'ar1015', width:90,  align: 'right',formatter:'integer' }
 					,{ name: 'ar15e', index:'ar15e', width:90,  align: 'right',formatter:'integer' }
-					,{ name: 'kor', index:'kor', width:90,  align: 'right',formatter:'integer' }
-					,{ name: 'frn', index:'frn', width:90,  align: 'right',formatter:'integer' }
+					
 					],
 					height: 600,
 					rowNum: 30,
@@ -84,36 +86,59 @@ var joinProc = {
           }}).trigger("reloadGrid");
 		});
 		
+		$('#btn-excel').on('click', function(){
+			if($("#jqGrid").getGridParam("reccount") <= 0) {
+				alert("데이터가 없거나 정보조회를 진행하지 않았습니다.");
+				return false;
+			}
+			
+			$("#jqGrid").jqGrid("exportToExcel",{
+				includeLabels : true,
+				includeGroupHeader : true,
+				includeFooter: true,
+				fileName : "시도별가입자현황.xlsx",
+				maxlength : 40 // maxlength for visible string data 
+			})
+		});
+		
 		$('#btn-chart-age').on('click', function(){
+			if($("#jqGrid").getGridParam("reccount") <= 0) {
+				alert("데이터가 없거나 정보조회를 진행하지 않았습니다.");
+				return false;
+			}
+			
+			var rowDataArr =  $("#jqGrid").getRowData();
 			// 파이차트 초기화
 			var pieData = { 
-				labels: ["30대 이하", "40~49", "50~59", "60~69", "60~69", "70대 이상"],
+				labels: ["30대 이하", "40~49", "50~59", "60~69", "70대 이상"],
 				datasets: [{
-					data: [3052, 1250, 37692, 59598, 57932],
+					data: [rowDataArr[0].ag30, rowDataArr[0].ag40, rowDataArr[0].ag50, rowDataArr[0].ag60, rowDataArr[0].ag70],
 					backgroundColor: ["#0cc2aa", "#fcc100", "#f44455", "#E8EAED", "#007bff"],
 					borderColor: "transparent"
 				}]
-			}; 
+			};
 			joinProc.drawPie("chartjs-age-pie", pieData);
 			
+			var barDatas = [];
+			var barColor = ["#0cc2aa", "#fcc100", "#f44455", "#E8EAED", "#007bff"]
+			for (var i = 1; i < 4 ; i++) {
+				if(rowDataArr[i].sidonm != '전체'){
+					
+					barDatas.push({
+						label: rowDataArr[i].sidonm,
+						backgroundColor: barColor[i%5],
+						borderColor: barColor[i%5],
+						hoverBackgroundColor: barColor[i%5],
+						hoverBorderColor: barColor[i%5],
+						data: [rowDataArr[i].ag30, rowDataArr[i].ag40, rowDataArr[i].ag50, rowDataArr[i].ag60, rowDataArr[i].ag70]	
+					});
+				}
+			}
+			console.log(barDatas);
 			// 바차트 초기화
 			var barData = {
-				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-				datasets: [{
-					label: "Last year",
-					backgroundColor: "#0cc2aa",
-					borderColor: "#0cc2aa",
-					hoverBackgroundColor: "#0cc2aa",
-					hoverBorderColor: "#0cc2aa",
-					data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79]
-				}, {
-					label: "This year",
-					backgroundColor: "#E8EAED",
-					borderColor: "#E8EAED",
-					hoverBackgroundColor: "#E8EAED",
-					hoverBorderColor: "#E8EAED",
-					data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68]
-				}]
+				labels: ["30대 이하", "40~49", "50~59", "60~69", "70대 이상"],
+				datasets: barDatas
 			};
 			joinProc.drawBar("chartjs-age-bar", barData);
 			
@@ -142,6 +167,10 @@ var joinProc = {
 		 * 가입 면적별 차트 모달 오픈
 		 */
 		$('#btn-chart-area').on('click', function(){
+			if($("#jqGrid").getGridParam("reccount") <= 0) {
+				alert("데이터가 없거나 정보조회를 진행하지 않았습니다.");
+				return false;
+			}
 			// 파이차트 초기화
 			
 			var pieData = { 
@@ -201,26 +230,34 @@ var joinProc = {
 		});
 	}
 	, drawPie : function(target, datas ) {
-		new Chart(document.getElementById(target), {
+		if(piChart) {
+			piChart.destroy()
+		}
+		
+		piChart = new Chart(document.getElementById(target), {
 			type: 'pie',
 			data: datas,
 			options: {
 				maintainAspectRatio: false,
 				legend: {
-					display: false
+					display: true
 				}
 			}
 		});
 	}
 	
 	,drawBar : function(target, datas) {
-		new Chart(document.getElementById(target), {
+		
+		if(barChart) {
+			barChart.destroy()
+		}
+		barChart = new Chart(document.getElementById(target), {
 			type: 'bar',
 			data: datas,
 			options: {
 				maintainAspectRatio: false,
 				legend: {
-					display: false
+					display: true
 				},
 				scales: {
 					yAxes: [{
@@ -245,7 +282,10 @@ var joinProc = {
 		});
 	}
 	, drawLine : function(target, datas) {
-		new Chart(document.getElementById(target), {
+		if(lineChart) {
+			lineChart.destroy()
+		}
+		lineChart = new Chart(document.getElementById(target), {
 			type: 'line',
 			data: datas,
 			options: {

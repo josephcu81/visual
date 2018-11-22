@@ -39,6 +39,12 @@
 			losrt
 		FROM status1
 		WHERE 1=1
+		<if test='cntyy != null and cntyy != ""'>
+		AND cntyy = #{cntyy}
+		</if>
+		<if test='sidocd != null and sidocd != ""'>
+		AND sidocd = #{sidocd}
+		</if>
 		order by sidocd
 	</select>
 </mapper>

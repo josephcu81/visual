@@ -30,6 +30,20 @@
 	    FROM comm_cd
 	    WHERE grp_cd = '100'
 	</select>
+	<select id="selectMclsCode" resultType="java.util.Map">
+		SELECT 
+	        cd AS code
+	        ,cd_nm AS name	     
+	    FROM comm_cd
+	    WHERE grp_cd = '110'
+	</select>
+	<select id="selectSclsCode" resultType="java.util.Map">
+		SELECT 
+	        cd AS code
+	        ,cd_nm AS name	     
+	    FROM comm_cd
+	    WHERE grp_cd = '120'
+	</select>
 	
 	<select id="selectItemCategoryCode" resultType="java.util.Map">
 		SELECT 

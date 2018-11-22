@@ -54,10 +54,11 @@
                 				<span class="align-middle">분석</span>
               				</a>
               				<ul id="analysis" class="sidebar-dropdown list-unstyled collapse ">
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li>
+              					<!-- <li class="sidebar-item"><a class="sidebar-link" href="/analysis/rejoin/index">농작물주산지 가입률및손해율</a></li> -->
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/weather/index">농작물주산지 기상재해정보</a></li>
               					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/price-day/index">농작물가격정보(AT센터)</a></li>
-              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">목적물별사고발생_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acdnt/index">사고조사현황_기상재해현황</a></li>
+              					<li class="sidebar-item"><a class="sidebar-link" href="/analysis/acpay/index">상품별사고별_보상내역</a></li>
               				</ul>
 						</li>
 						<li class="sidebar-item">
@@ -100,8 +101,11 @@
 						  <li class="nav-item">
 						    <a class="nav-link" id="menu4-tab" data-toggle="tab" href="#menu4" role="tab" aria-controls="contact" aria-selected="false">통계보고서</a>
 						  </li>
+						   <li class="nav-item">
+						    <a class="nav-link" id="menu4-tab" data-toggle="tab" href="#menu5" role="tab" aria-controls="contact" aria-selected="false">기타통계</a>
+						  </li>
 						  <li class="nav-item">
-						    <a class="nav-link" id="menu5-tab" data-toggle="tab" href="#menu5" role="tab" aria-controls="contact" aria-selected="false">홈페이지 제공통계</a>
+						    <a class="nav-link" id="menu5-tab" data-toggle="tab" href="#menu6" role="tab" aria-controls="contact" aria-selected="false">홈페이지 제공통계</a>
 						  </li>
 						</ul>
 						<div class="tab-content" id="myTabContent">
@@ -112,13 +116,13 @@
 								    농작물재해보험
 								  </button>
 								  <div class="dropdown-menu scrollable-menu">
-								    <a class="dropdown-item" href="#">연도별 가입 및 사고현황</a>
-								    <a class="dropdown-item" href="#">품목별/연도별 가입 및 사고현황</a>
+								    <a class="dropdown-item" href="/status/cityes/index">연도별 가입 및 사고현황</a>
+								    <a class="dropdown-item" href="/status/items/index">>품목별/연도별 가입 및 사고현황</a>
 								    <a class="dropdown-item" href="#">시도별 가입 및 사고현황</a>
 								    <a class="dropdown-item" href="#">품목별 가입 및 사고현황</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="#">가입자(연도별)현황</a>
-								    <a class="dropdown-item" href="#">가입자(시도별)현황</a>
+								    <a class="dropdown-item" href="/status/join/index">가입자(시도별)현황</a>
 								    <a class="dropdown-item" href="#">가입자(품목별)현황</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="#">특정위험품목(연도별) 보험금 지급현황</a>
@@ -453,6 +457,40 @@
 						  </div>
 						  
 						  <div class="tab-pane fade" id="menu5" role="tabpanel" aria-labelledby="menu5-tab">
+						  	<div class="mt-3">
+						  	 <div class="btn-group col-2">
+								  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    요율서
+								  </button>
+								  <div class="dropdown-menu">
+								    <a class="dropdown-item" href="#">농작물_벼 맥류 요율서 조회 분석 </a>
+								    <a class="dropdown-item" href="#">농작물_밭작물 요율서 조회〮분석 </a>
+								    <div class="dropdown-divider"></div>
+								    <a class="dropdown-item" href="#">농작물_과수작물 요율서 조회〮분석 </a>
+								    <a class="dropdown-item" href="#">농작물_버섯 요율서 조회〮분석</a>
+								    <a class="dropdown-item" href="#">농작물_원예시설 요율서 조회〮분석</a>
+								    <a class="dropdown-item" href="#">가축 요율서 조회 분석</a>
+								    <div class="dropdown-divider"></div>
+								    <a class="dropdown-item" href="#">농업인 요율서 조회 분석 </a>
+								    <div class="dropdown-divider"></div>
+								    <a class="dropdown-item" href="#">농기계 요율서 조회 분석 </a>
+								 </div>
+							  </div>
+							   <div class="btn-group col-2">
+								  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    증권별조회
+								  </button>
+								  <div class="dropdown-menu">
+								    <a class="dropdown-item" href="#">농작물 보험 증권별 조회 </a>
+								    <a class="dropdown-item" href="#">가축 보험 증권별 조회  </a>
+								    <div class="dropdown-divider"></div>
+								    <a class="dropdown-item" href="#">농업인 보험 증권별 조회  </a>
+								    <a class="dropdown-item" href="#">농기계 보험증권별 조회 </a>
+								 </div>
+							  </div>
+							</div>
+						  </div>
+						  <div class="tab-pane fade" id="menu6" role="tabpanel" aria-labelledby="menu6-tab">
 						  	<div class="mt-3">
 						  	 <div class="btn-group col-2">
 								  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

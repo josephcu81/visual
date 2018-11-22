@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.apfs.analysis.mapper.AcpayMapper">
+	<select id="selectAcpayAnalList" resultType="kr.apfs.analysis.vo.AcpayVo">
+		SELECT
+		   sidocd
+		   ,(select etc1 from comm_cd where cd=sidocd and grp_cd='300' ) sidoetc
+		   ,mcls
+		   ,scls
+		   ,fppcd
+		   ,fpp
+		   ,acdcacd
+		   ,round(SUM(PAYIDM)/1000,0) payidm
+		   ,SUM(PAYMGAR) paymgar
+		   ,SUM(CNCNT) fmcnt
+		   ,round((SUM(PAYIDM)/SUM(CNCNT))/1000 ,0) avgidm
+		FROM (
+		SELECT sidocd 
+		     ,(SELECT CD_NM FROM COMM_CD WHERE CD=FRC_MCLS AND GRP_CD='110') mcls
+		     ,(SELECT CD_NM FROM COMM_CD WHERE CD=FRC_SCLS AND GRP_CD='120') scls
+		     ,FPPCD, (SELECT CD_NM FROM COMM_CD WHERE CD=FPPCD AND GRP_CD='100') fpp
+		     ,ACDCACD
+		     ,PAYIDM
+		     ,PAYMGAR
+		    , CNCNT
+		FROM ( SELECT
+		          sidocd
+		         ,FRC_MCLS
+		         ,FRC_SCLS
+		         ,FPPCD
+		         , SUM(PAYIDM) PAYIDM
+		         , SUM(PAYMGAR) PAYMGAR
+		         ,ACDCACD, CNCNO, COUNT(1) CNCNT
+		       FROM FDI_OBJPAY 
+		       WHERE 1=1
+		       <if test='sidocd != null and sidocd != ""' >
+		       AND sidocd = #{sidocd}
+		       </if>
+		        <if test='mcls != null and mcls != ""' >
+		       AND frc_mcls =#{mcls}
+		       </if>
+		       <if test='scls != null and scls != ""' >
+		       AND frc_scls =#{scls}
+		       </if>
+		       <if test='fppcd != null and fppcd != ""' >
+		       AND fppcd = #{fppcd}
+               </if>
+			    GROUP BY sidocd, FRC_MCLS, FRC_SCLS, FPPCD, ACDCACD,CNCNO 
+			    ORDER BY sidocd, FRC_MCLS, FRC_SCLS, FPPCD )
+		    ) 
+		    GROUP BY sidocd, mcls, scls, fppcd, fpp, acdcacd
+		    ORDER BY sidocd, mcls, scls, fppcd,  acdcacd
+		 
+	</select>
+</mapper>

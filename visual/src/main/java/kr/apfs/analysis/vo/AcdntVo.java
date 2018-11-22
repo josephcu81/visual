@@ -21,6 +21,9 @@ public class AcdntVo {
 	private float daysumrn;
 	private float dayavgws;
 	private float daysumss;
+	private String examnrsn;
+	private String pstoffc;
+	private String examinknd;
 	
 	public String getSidoetc() {
 		return sidoetc;
@@ -138,6 +141,24 @@ public class AcdntVo {
 	}
 	public void setDaysumss(float daysumss) {
 		this.daysumss = daysumss;
+	}
+	public String getExamnrsn() {
+		return examnrsn;
+	}
+	public void setExamnrsn(String examnrsn) {
+		this.examnrsn = examnrsn;
+	}
+	public String getPstoffc() {
+		return pstoffc;
+	}
+	public void setPstoffc(String pstoffc) {
+		this.pstoffc = pstoffc;
+	}
+	public String getExaminknd() {
+		return examinknd;
+	}
+	public void setExaminknd(String examinknd) {
+		this.examinknd = examinknd;
 	}
 	@Override
 	public String toString() {

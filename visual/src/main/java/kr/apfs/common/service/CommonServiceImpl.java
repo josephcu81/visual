@@ -45,6 +45,18 @@ public class CommonServiceImpl implements CommonService {
 	public List<Map<String, Object>> getContryCodeList() {
 		return commonMapper.selectContryCode();
 	}
+
+	@Override
+	public List<Map<String, Object>> getMclsList() {
+		// TODO Auto-generated method stub
+		return commonMapper.selectMclsCode();
+	}
+
+	@Override
+	public List<Map<String, Object>> getSclsList() {
+		// TODO Auto-generated method stub
+		return commonMapper.selectSclsCode();
+	}
 	
 
 }

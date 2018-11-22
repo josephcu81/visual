@@ -28,6 +28,8 @@ public interface CommonMapper {
 	 * @return
 	 */
 	List<Map<String, Object>> selectFppCode();
+	List<Map<String, Object>> selectMclsCode();
+	List<Map<String, Object>> selectSclsCode();
 	
 	/**
 	 * 농산물 가격정보 부류 코드 조회

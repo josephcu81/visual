@@ -4,15 +4,23 @@
 	<select id="selectAcdntAnalList" resultType="kr.apfs.analysis.vo.AcdntVo">
 		SELECT
 		   sidoetc, 
-		   acdno, objno, acdbdt, acdcacd,
-		   frcs,  fppcd, fppnm,
-		   sidocd, sidonm,
+		   a.acdno,
+		   a.objno, 
+		   regexp_replace(a.acdbdt,'([[:digit:]]{4})([[:digit:]]{2})([[:digit:]]{2})','\1-\2-\3')  acdbdt,
+		   a.acdcacd,
+		   a.frcs,
+		   a.fppcd,
+		   a.fppnm,
+		   a.sidocd, sidonm,
 		   paymgar, payidm, ymd,
 		   areaid, areanm,
-		   wrnnm, daymaxta, dayminta,daysumrn,dayavgws,daysumss
+		   wrnnm, daymaxta, dayminta,daysumrn,dayavgws,daysumss,
+		   examnrsn, pstoffc, examinknd
 		FROM 
-		   ACDWR
-		WHERE 1=1        
+		   ACDWR a, FDI_OBJADEX b
+		WHERE 1=1
+		AND A.ACDNO = B.ACDNTNO
+        AND A.OBJNO =B.OBJNO        
 		AND acdbdt BETWEEN #{stYmd} AND #{edYmd}
 		<if test='sidocd != null and sidocd != ""' >
 		 AND sidocd = #{sidocd}
