@@ -28,8 +28,8 @@
 	<!-- log`s target and level  -->
 	<!-- ERROR > WARN > INFO(realese) > DEBUG(local) > TRACE -->	
     <logger name="org.springframework" additivity="false" >
-		<level value="INFO"/>
-		<appender-ref ref="CONSOLE"/>
+		<level value="DEBUG"/>
+		<appender-ref ref="CONSOLE"/> 
 	</logger>
 
     <root>

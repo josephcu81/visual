@@ -48,9 +48,12 @@ var acpayProc = {
 		        	/*stYmd : dateArr[0].trim(),
 		        	edYmd : dateArr[1].trim(),*/
 		        	sidocd : $('select[name="sidocd"]').val(),
+		        	mcls : $('select[name="mcls"]').val(),
+			         scls : $('select[name="scls"]').val(),
 		        	fppcd : $('select[name="fppcd"]').val(),
-		        	 mcls : $('select[name="mcsl"]').val(),
-			         scls : $('select[name="scls"]').val()
+		        	sidochk : $('select[name="sidochk"]').val()
+		        	 
+			         
 		        }
 		}
 		var girdCmpnt = new JqgridCmpnt('#jqGrid');
@@ -78,10 +81,13 @@ var acpayProc = {
          	  /* stYmd : dateArr[0].trim(),
 			   edYmd : dateArr[1].trim(),*/
 			   sidocd : $('select[name="sidocd"]').val(),
+			   mcls : $('select[name="mcls"]').val(),
+			   scls : $('select[name="scls"]').val(),
 			   fppcd : $('select[name="fppcd"]').val(),
-			   mcls : $('select[name="mcsl"]').val(),
-			   scls : $('select[name="scls"]').val()
+			   sidochk : $('select[name="sidochk"]').val()
+			   			   
           }}).trigger("reloadGrid");
+			
 		});
 		
 		$('#btn-excel').on('click', function(){

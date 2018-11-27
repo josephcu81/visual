@@ -17,8 +17,9 @@
         font-size:94%
     }
  </style>
-  
+
 </head>
+
 <body>
 	<div class="wraaper">
 		<div class="d-flex">
@@ -95,6 +96,10 @@
 												<!-- <label class="form-label mr-5"  for="daterange">사고발생일자</label>
 												<input class="form-control mr-5" type="text" id="daterange" name="daterange" style="width: 213px;" />
 												 -->
+												<select class="custom-select mr-3" id="sidochk" name="sidochk">
+										          <option  value=""  selected>상품별</option>
+										          <option value="sido">지역별</option>
+										        </select> 
 												<label class="form-label mr-3" for="sidocd">시도명</label>
 												<select class="custom-select mr-3" id="sidocd" name="sidocd">
 										          <option  value=""  selected>전체</option>
@@ -109,7 +114,7 @@
 										          	<option value="${mcls.CODE }">${mcls.NAME }</option>
 										          </c:forEach>
 										        </select>
-										        <label class="form-label mr-3" for="mcls">상품소분류</label>
+										        <label class="form-label mr-3" for="scls">상품소분류</label>
 										        <select class="custom-select mr-3" id="scls" name="scls">
 										          <option  value="" selected>전체</option>
 										          <c:forEach items="${sclsList }" var="scls">

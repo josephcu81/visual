@@ -58,7 +58,7 @@ public class WeatherController {
 	public String save(@RequestParam Map<String, Object> data, ModelMap model) {
 		ResultVo result = new ResultVo();
 		List<WeatherVo> weatherList = new ArrayList<WeatherVo>();
-	//	result = weatherService.save(weatherList);
+		result = weatherService.save(weatherList);
 		return new Gson().toJson(result);
 	}
 	
