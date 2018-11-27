@@ -1,4 +1,4 @@
-/**
+﻿/**
  * /js/status/item.js
  */
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 
 				],
-				height: 400,
+				height: 650,
 				rowNum: 30,
 				shrinkToFit : false,
 				autowidth:true

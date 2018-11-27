@@ -1,4 +1,4 @@
-/**
+﻿/**
  * /js/status/join.js
  */
 var tokenKey = "t%2FW%2BgR8MjLNnoqLoxLWpIrx%2BT9%2F%2FKBemixdk8wZxqBmz53x1ykp1dYhyotCSk4xj6Os3Ri7YZVKSAeEljAfksg%3D%3D";
@@ -85,8 +85,8 @@ var weatherProc = {
 					,{ name: 'daySumSs', index:'daySumSs', width:100,  align: 'right'}
 					,{ name: 'wrnCount', index:'wrnCount', width:100,  align: 'center'}
 					,{ name: 'wrnCd', index:'wrnCd', width:100,  align: 'center'}
-					,{ name: 'wrnNm', index:'wrnNm', width:100,  align: 'center'}
-					
+					,{ name: 'wrnNm', index:'wrnNm', width:100,  align: 'center', formatter:weatherProc.setWrnNm}
+				
 					// {"dayMaxTa":20.2,"dayAvgWs":0.6,"paCropSpeId":"PA080101","paCropSpeName":"봄","paCropName":"당근","ymd":"2018-10-16 00:00:00","areaId":2600000088,"dayAvgTa":16.1,"areaName":"부산","dayAvgRhm":68,"dayMinTa":13.9,"daySumSs":1.9,"dayMinRhm":48.7,"daySumRn":0}
 				],
 				datatype: "local",
@@ -134,6 +134,27 @@ var weatherProc = {
 			})
 		});
 		//http://newsky2.kma.go.kr/service/ProductingAreaInfoService/DayStats?ST_YMD=20161201&ED_YMD=20161231&AREA_ID=999999999&PA_CROP_SPE_ID=PA999999&serviceKey="+tokenKey
+	}
+	, setWrnNm : function(cellValue, options, rowdata, action){
+		if(cellValue) return cellValue;
+		var code = rowdata.wrnCd;
+		switch (code) {
+		case 'W2' : return '강풍주의보'
+		case 'W3' : return '강풍경보'
+		case 'R2' : return '호우주의보'
+		case 'R3' : return '호우경보'
+		case 'S2' : return '대설주의보'
+		case 'S3' : return '대설경보'
+		case 'H2' : return '폭염주의보'
+		case 'H3' : return '폭염경보'
+		case 'D2' : return '건조주의보'
+		case 'D3' : return '건조경보'
+		case 'C2' : return '한파주의보'
+		case 'C3' : return '한파경보'
+		case 'T2' : return '태풍주의보'
+		case 'T3' : return '태풍경보'
+		default : return ''
+		}
 	}
 }
 

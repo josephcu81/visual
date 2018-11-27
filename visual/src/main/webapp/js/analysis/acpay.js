@@ -1,9 +1,8 @@
-/**
+﻿/**
  * /js/analysis/acpay.js
  */
 
 $(document).ready(function() {
-	
 	acpayProc.init();
 });
 
@@ -11,6 +10,11 @@ var acpayProc = {
 	init : function() {
 		acpayProc.initGrid();
 		acpayProc.eventBind();
+		if($('#sidochk').val()	 == 'sido' ) {
+			$('#sidocd').prop('disabled', false);
+		} else {
+			$('#sidocd').prop('disabled', true);
+		}
 		
 	}
 	, initGrid : function() {
@@ -99,7 +103,17 @@ var acpayProc = {
 				maxlength : 40 // maxlength for visible string data 
 			})
 		});
+
+		$('#sidochk').on('change', function(){
+			console.log($('#sidochk').val());
+			if($('#sidochk').val()	 == 'sido' ) {
+				$('#sidocd').prop('disabled', false);
+			} else {
+				$('#sidocd').prop('disabled', true);
+			}
+		});
 	}
+	
 }
 
 $(window).resize(function() {	
